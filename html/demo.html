@@ -152,11 +152,17 @@
       <h1>Form</h1>
       <h2>Registration form</h2>
 
-      <!-- action is  -->
+      <!-- The action attribute specifies where to send the form-data when a form is submitted  -->
+      <!-- i.e. <form action="/action_page.php" method="get"> -->
       <form action="">
         <div>
+          <!-- label - for attribute to link to input -->
           <label for="usernameInput">Username</label>
+
+          <!-- Name attribute can be used to reference the element in a JavaScript. -->
+          <!-- placeholder - preview -->
           <input
+            name="username"
             id="usernameInput"
             type="text"
             placeholder="Username"
