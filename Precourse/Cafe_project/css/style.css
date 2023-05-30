@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+dd { 
+  /* display: block; */
+  margin-left: 40px;
+}
+
+nav {
+  margin-bottom: 20px; /* add space under nav bar */
+
+}
+
+nav > ul {
+  list-style-type: none; /* remove bullet points in the list */
+  border: 2px solid black; /* add border around nav section */
+  height: 40px; /* height of nav bar */
+
+
+  display: flex; /* display horizontally */
+  justify-content: space-around; /* add spacing between content horizontally */
+  align-items: center; /* set content inside nav bar center vertically */
+}
+
+nav > ul > li > a {
+  color: #222;
+  text-decoration: none; /* remove underline of text */
+}
+
+nav > ul > li > a:hover { /* execute when hover  */
+  color: pink;
+  text-decoration: underline;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 10px
+}
+
+header > h1 {
+  margin-bottom: 10px;
+}
+
+.copyright-section {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+}

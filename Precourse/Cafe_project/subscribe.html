@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/subscribe.css">
+  <title>Oscar's Cafe</title>
+</head>
+<body>
+  <!-- nav bar -->
+  <nav>
+    <ul>
+      <li>
+        <a href="home.html">Home</a>
+      </li>
+      <li>
+        <a href="contact.html">Contact Us</a>
+      </li>
+      <li>
+        <a href="book.html">Book</a>
+      </li>
+      <li>
+        <a href="bookings.html">Bookings</a>
+      </li>
+      <li>
+        <a href="subscribe.html">Subscribe</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Subscribe to Oscar's Cafe</h1>
+    <p>Please fill in your information below</p>
+  </header>
+
+  <main>
+    <form id="subscriptionForm" class="subscription-form" onsubmit="return subscribe(event)">
+      <label for="fullName">Full Name: </label>
+      <input type="text" id="name" required>
+      
+      <label for="email">Email: </label>
+      <input type="email" id="email" required>
+      
+      <input type="reset" value="Clear" />
+
+      <input type="submit" value="Subscribe">
+  </form>
+  </main>
+
+  <footer>
+    <div id="copyrightSection" class="copyright-section">
+    </div>
+  </footer>
+
+  <!-- Javascript -->
+  <script>
+
+    // display author and year
+    function copyright(){
+      const author = "Oscar NGUYEN"
+      let currentYear = new Date().getFullYear();
+      let copyrightSentence = `<p> Made by ${author}, ${currentYear} </p>`;
+      let copyrightSection = document.getElementById('copyrightSection');
+      copyrightSection.innerHTML = copyrightSentence;
+    } ;
+    copyright();
+    
+    // when click Subscribe
+    function subscribe(event) {
+      event.preventDefault();
+      // Get the values from the input fields
+      const fullName = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+        
+      // Display the thank you message
+      alert(`Thanks ${name}, We'll be in touch via ${email} shortly!`);
+
+    };
+    
+  </script>
+</body>
+</html>

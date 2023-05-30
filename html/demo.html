@@ -1,0 +1,61 @@
+<!-- informs the browser of the standard we’re using, usually HTML -->
+<!DOCTYPE html>
+
+<!-- tells the browser where our html starts and finishes, can set additionnal attributes like language -->
+<html lang="en">
+  <!-- <head> Additional information or settings about the website. Including metadata -->
+  <head>
+    <!-- Metadata: information about properties of the document and additional information for SEO -->
+
+    <script></script>
+
+    <!-- Making sure the browser displays text property. UTF8 contains all special characters and a large set of emojis -->
+    <meta charset="UTF-8" />
+
+    <!-- Can set instructions for the browser around caching, page refresh etc -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Sets information about the actual usable content of the window on the page. Very important for CSS media queries -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title appear in the tab browser -->
+    <title>Demo</title>
+  </head>
+
+  <!-- body is where all the actual content goes -->
+  <body>
+    <section>
+      <h1>Main heading</h1>
+      <h2>A Subheading</h2>
+      <p>There should be a paragraph</p>
+      <p>Another paragraph</p>
+    </section>
+    <section>
+      <h2>Inline & Block elements</h2>
+      <div style="border: 1px solid #f88379">Hello word</div>
+      <p>The block level Div takes up the entire width of its parent</p>
+      <p>
+        The following is an inline element
+        <span style="border: 1px solid #f88379"
+          >I am inside the paragraph
+        </span>
+        and it only takes up as much space as it's content
+      </p>
+
+      <p style="margin: 0px">
+        <img src="./squirrel.jpeg" alt="squirrel" />
+        <img src="./squirrel.jpeg" alt="squirrel" />
+      </p>
+      <div><img src="./squirrel.jpeg" alt="squirrel" /></div>
+      <div><img src="./squirrel.jpeg" alt="squirrel" /></div>
+      <p style="margin: 0px">
+        <img src="./squirrel.jpeg" alt="squirrel" />
+        <img src="./squirrel.jpeg" alt="squirrel" />
+      </p>
+    </section>
+
+    <section>
+      <h2>Semantic HTML</h2>
+    </section>
+  </body>
+</html>

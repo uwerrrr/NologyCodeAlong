@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box model</title>
+</head>
+<body>
+  <p id="para_border_padding_margin">Paragraph 1</p>
+  <p id="para_border_padding_margin">Paragraph 2</p>
+  <p id="para_border_padding_margin">Paragraph 3</p>
+
+  <h2>Header 2</h2>
+
+  <p>Normal text</p>
+
+<style>
+  * { /* style applied to ALL element on page */
+    padding: 0;
+    margin: 0;
+  }
+
+  #para_border_padding_margin {
+    border: 2px solid black;
+    padding: 20px; /* create  space between the content & border*/
+    margin: 20px; /* create  space outside around the border*/
+  }
+
+  h2 {
+    border: 3px solid black;
+    margin-bottom: 10px;
+  }
+  /* Box model specify the order things are applied to the element
+    1. height & width of the element
+    2. add padding to the element
+    3. add a border around padded area
+    4. add margin outsode of the border
+  */
+
+
+</style>
+
+</body>
+</html>

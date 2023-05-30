@@ -1,0 +1,12 @@
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+main > .subscription-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 10px;
+
+}

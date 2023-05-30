@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <title>Oscar's Cafe</title>
+  </head>
+  <body>
+    <!-- nav bar -->
+    <nav>
+      <ul>
+        <li>
+          <a href="home.html">Home</a>
+        </li>
+        <li>
+          <a href="contact.html">Contact Us</a>
+        </li>
+        <li>
+          <a href="book.html">Book</a>
+        </li>
+        <li>
+          <a href="bookings.html">Bookings</a>
+        </li>
+        <li>
+          <a href="subscribe.html">Subscribe</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <h1>Contact Us - Oscar's Cafe</h1>
+      <p>Please contact us via number 0123456789</p>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <form class="contact-form" onsubmit="return submitMessage(event)">
+        <!-- use form tag for form -->
+        <!-- execute submitMessage(event) function -->
+        <!-- Email -->
+        <label for="email">Email: </label>
+        <!-- label for name of input -->
+        <input type="text" name="email" id="email" required />
+        <!-- add required attribute  -->
+
+        <!-- Full name -->
+        <label for="fullName">Full Name: </label>
+        <!-- label for name of input -->
+        <input type="text" name="fullName" id="fullName" required />
+
+        <!-- Reason for comment -->
+        <label for="feedbackType">Feedback Type</label>
+        <select name="feedbackType" id="feedbackType">
+          <option value="review">Review</option>
+          <option value="complaint">Complaint</option>
+          <option value="event">Event</option>
+        </select>
+
+        <!-- Comment -->
+        <label for="comment">Comment</label>
+        <textarea name="comment" id="comment" cols="30" rows="3" required>
+Leave your comment hear</textarea
+        >
+        <!-- textarea is bigger input than <input> - cols="30" = 30 chars -->
+
+        <!-- Clear button -->
+        <input type="reset" value="Clear" />
+        <!-- reset all input fields -->
+
+        <!-- Submit button -->
+        <input type="submit" />
+      </form>
+    </main>
+
+    <footer>
+      <div class="form-title-section">
+        <h3>Contact Messages</h3>
+        <button onclick="deleteMessages()">Clear Messagesss</button>
+      </div>
+
+      <div class="form-wrapper">
+        <!-- retrieving meesage from sessionStorage and render it to the webpage -->
+        <dl id="currentMessages">
+          <!-- descriptive list -->
+          <!-- <dt></dt> - descriptive term -->
+          <!-- <dd></dd> - descriptive description -->
+        </dl>
+      </div>
+
+      <div id="copyrightSection" class="copyright-section"></div>
+    </footer>
+
+    <!-- Javascript -->
+    <script>
+      // display author and year
+      function copyright() {
+        const author = "Oscar NGUYEN";
+        let currentYear = new Date().getFullYear();
+        let copyrightSentence = `<p> Made by ${author}, ${currentYear} </p>`;
+        let copyrightSection = document.getElementById("copyrightSection");
+        copyrightSection.innerHTML = copyrightSentence;
+      }
+      copyright();
+
+      console.log(
+        "sessionStorage.getItem('messages'): ",
+        sessionStorage.getItem("messages")
+      );
+
+      function submitMessage(event) {
+        event.preventDefault(); /* stop form behaving in its default way so that we can interact with it in JS*/
+        const email = document.getElementById("email").value;
+        const fullName = document.getElementById("fullName").value;
+        const feedbackType = document.getElementById("feedbackType").value;
+        const comment = document.getElementById("comment").value;
+
+        const messageObject = {
+          email,
+          fullName,
+          feedbackType,
+          comment,
+        };
+
+        let currentMessages = [];
+
+        // if sessionStorage.messages exists -> add previous contents to currentMessages
+        if (window.sessionStorage.getItem("messages")) {
+          currentMessages = JSON.parse(
+            window.sessionStorage.getItem("messages")
+          );
+        }
+
+        // add current content inside messageObject array to currentMessages array
+        currentMessages.push(messageObject);
+
+        // write all contents (previous & current) stored in currentMessages into sessionStorage.messages
+        // setItem(key: string, value: string)
+        window.sessionStorage.setItem(
+          "messages",
+          JSON.stringify(currentMessages)
+        );
+
+        console.log("Messages submitted");
+        console.log(
+          "sessionStorage.getItem('messages'): ",
+          sessionStorage.getItem("messages")
+        );
+
+        renderMessages(); /*  execute renderMessages() function when submiting new entry */
+      }
+
+      function renderMessages() {
+        let currentMessages = [];
+
+        // if sessionStorage.messages exists -> add previous contents to currentMessages
+        if (window.sessionStorage.getItem("messages")) {
+          currentMessages = JSON.parse(
+            window.sessionStorage.getItem("messages")
+          );
+        }
+
+        let listItemS = [];
+
+        for (let i = 0; i < currentMessages.length; i++) {
+          const currentMessage = currentMessages[i];
+
+          // listItem is a HTML representatation of the object in sessionStorage
+          let listItem = "";
+          listItem += `<dt>${currentMessage.fullName} - ${currentMessage.email}</dt>`;
+          listItem += `<dd>${currentMessage.feedbackType}: ${currentMessage.comment}</dd>`;
+          listItem += `<br />`;
+
+          listItemS.push(listItem); /* add to listItemS list */
+          console.log("listItemS: ", listItemS);
+        }
+
+        // display current messages to webpage under <dl id="currentMessages">
+        let descList = document.getElementById("currentMessages");
+        // join all item of listItemS together and render them inside descList, which is <dl></dl>
+        descList.innerHTML = listItemS.join("");
+        console.log("descList: ", descList);
+        console.log("descList.innerHTML: ", descList.innerHTML);
+      }
+
+      renderMessages(); /*  execute renderMessages() function when webpage is loaded */
+
+      function deleteMessages() {
+        // check sessionStorage.messages key exist ?
+        // remove if exists
+        if (window.sessionStorage.getItem("messages")) {
+          window.sessionStorage.removeItem(
+            "messages"
+          ); /* remove 'messages' key in sessionStorage */
+        }
+
+        // execute renderMessages() function
+        renderMessages();
+      }
+    </script>
+  </body>
+</html>

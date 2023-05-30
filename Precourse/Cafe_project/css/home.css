@@ -1,0 +1,31 @@
+
+main {
+  /* center all images content on the page */
+  display: flex;
+  justify-content: center;
+
+}
+
+main > .gallery {
+  display: grid; /* display item in a row and column format */
+  grid-template-columns: 1fr 1fr 1fr; /* create 3 columns - each col has size = 1fr */
+  grid-gap: 20px; /* add space between grid content */
+}
+
+main > .gallery > img {
+  height: 150px;
+  width: 150px;
+
+  /* add frame around each image */
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 black; /* add shadow - values: offset-x | offset-y | blur-radius | spread-radius | color */
+
+  border: 1px solid white; 
+  border-radius: 5px; /* make round corners  */
+
+}
+
+main > .gallery > img:hover {
+  box-shadow: 0 8px 16px 0 black; /* shadow - values: offset-x | offset-y | blur-radius | spread-radius | color */
+  cursor: pointer; /* change cursor to pointer when hover */
+}
