@@ -146,5 +146,53 @@
         <li>Item 3</li>
       </ol>
     </section>
+
+    <section>
+      <hr />
+      <h1>Form</h1>
+      <h2>Registration form</h2>
+
+      <!-- action is  -->
+      <form action="">
+        <div>
+          <label for="usernameInput">Username</label>
+          <input
+            id="usernameInput"
+            type="text"
+            placeholder="Username"
+            aria-placeholder="Username"
+            required
+          />
+        </div>
+        <div>
+          <label for="emailInput">Email</label>
+          <input
+            id="emailInput"
+            type="email"
+            placeholder="email"
+            aria-placeholder="email"
+            required
+          />
+        </div>
+        <div>
+          <label for="roleInput">Role</label>
+          <select name="role" id="roleInput">
+            <option value="Buyer">Buyer</option>
+            <option value="Seller">Seller</option>
+          </select>
+        </div>
+        <div>
+          <label for="passwordInput">Password</label>
+          <input name="password" id="passwordInput" type="password" required />
+        </div>
+        <div>
+          <label for="passwordConfirmInput">Password Confirmation</label>
+          <input id="passwordConfirmInput" type="password" />
+        </div>
+        <!-- <input type="submit" value-"Register' /> -->
+        <button type="submit">Register</button>
+      </form>
+    </section>
+    <footer></footer>
   </body>
 </html>
