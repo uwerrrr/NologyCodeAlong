@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form challenge</title>
+
+    <!-- ## MVP:
+      Challenge 1: Create a form that takes inputs and which can be submited. This form will contain the following:
+
+      - Full name (required, this field should be sent as full-name)
+      - Age (required / validation, this field should be sent as age)
+      - State (dropdown, this field should be sent as state)
+      - Email address (required / validation, this field should be sent as email)
+      - Telephone number (validation, this field should be sent as phone-number)
+      - Message (required, this field should be sent as message)
+      - Submit button
+
+      ## Submission instructions
+
+      1. git pull origin main
+      2. Create a branch called `feature/your_name/form_challenge`
+      3. Create a folder {your-name} inside this challenge directory
+      4. Create an index.html file that fulfills the above challenge
+      5. git push origin `feature/your_name/form_challenge`
+      6. create a pull request on github, and tag Alex as a reviewer
+    -->
+  </head>
+
+  <body>
+    <center>
+      <h1>Form challenge</h1>
+
+      <h2>Message form</h2>
+
+      <form action="">
+        <table>
+          <tr>
+            <td><label for="fullNameInput">Full name</label></td>
+            <td>
+              <input
+                name="full-name"
+                id="fullNameInput"
+                type="text"
+                placeholder="First name & Last name"
+                aria-placeholder="First name & Last name"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="ageInput">Age</label></td>
+            <td>
+              <input
+                name="age"
+                id="ageInput"
+                type="number"
+                placeholder="Age"
+                aria-placeholder="Age"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="stateInput">State</label></td>
+            <td>
+              <select name="state" id="state" required>
+                <option disabled selected value="">-- Select a state --</option>
+                <option value="New South Wales">New South Wales</option>
+                <option value="Northern Territory">Northern Territory</option>
+                <option value="Queensland">Queensland</option>
+                <option value="South Australia">South Australia</option>
+                <option value="Tasmania">Tasmania</option>
+                <option value="Victoria">Victoria</option>
+                <option value="Western Australia">Western Australia</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="emailInput">Email</label></td>
+            <td>
+              <input
+                name="email"
+                id="emailInput"
+                type="email"
+                placeholder="Enter your email"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="phoneInput">Telephone number</label></td>
+            <td>
+              <input
+                name="phone-number"
+                id="phoneInput"
+                type="tel"
+                placeholder="Enter your Telephone number"
+                aria-placeholder="Enter your Telephone number"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="messageInput">Message</label></td>
+            <td>
+              <textarea
+                name="message"
+                id="messageInput"
+                rows="5"
+                placeholder="Enter your messages"
+                required
+              ></textarea>
+            </td>
+          </tr>
+        </table>
+
+        <!-- <input type="submit" value-"Register' /> -->
+        <button type="submit">Submit</button>
+      </form>
+    </center>
+  </body>
+</html>
