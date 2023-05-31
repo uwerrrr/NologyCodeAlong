@@ -1,0 +1,28 @@
+/* universal selector */
+* {
+  font-family: "Noto Sans", sans-serif;
+  background-color: #faebd7;
+}
+
+h1 {
+  color: deepskyblue;
+  text-decoration: underline;
+}
+
+h3 {
+  color: brown;
+}
+
+div {
+  border: 1px solid coral;
+}
+
+/* class selector */
+
+/* id selector */
+#1kitten {
+  padding: 20px 10px 5px;
+  background-color: darkgreen;
+}
+
+/* BOX MODEL */
