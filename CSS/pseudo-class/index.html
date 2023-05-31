@@ -18,6 +18,13 @@
       <p>Five</p>
     </div>
 
+    <form>
+      <input type="text" placeholder="First Name" required />
+      <input type="text" placeholder="Last Name" />
+      <input type="text" placeholder="City" disabled />
+      <input type="text" placeholder="City" disabled />
+    </form>
+
     <style>
       button {
         background-color: rgb(36, 152, 219);
@@ -32,7 +39,40 @@
         color: rgb(36, 152, 219);
       }
 
-      div:p:first-of-type {
+      div > p:first-of-type {
+        color: cornflowerblue;
+      }
+
+      div > p:last-of-type {
+        color: chartreuse;
+      }
+
+      div > p:nth-of-type(2) {
+        color: brown;
+      }
+
+      div > p:nth-last-of-type(2) {
+        color: darkblue;
+      }
+
+      input:disabled {
+        border: 1px solid lightseagreen;
+      }
+
+      input:enabled {
+        background-color: blanchedalmond;
+      }
+
+      input:required {
+        border: 2px solid orange;
+      }
+
+      input:optional {
+        background-color: aliceblue;
+      }
+
+      input {
+        background-color: aquamarine;
       }
     </style>
   </body>
