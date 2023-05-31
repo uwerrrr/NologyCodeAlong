@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Click me</button>
+
+    <p>Para outside of div</p>
+    <div>
+      <p>One</p>
+      <p>Two</p>
+      <p>Three</p>
+      <p>Four</p>
+      <p>Five</p>
+    </div>
+
+    <style>
+      button {
+        background-color: rgb(36, 152, 219);
+        color: white;
+        font-weight: bold;
+        border: 3px solid rgb(36, 152, 219);
+        padding: 4px 8px;
+      }
+
+      button:hover {
+        background-color: white;
+        color: rgb(36, 152, 219);
+      }
+
+      div:p:first-of-type {
+      }
+    </style>
+  </body>
+</html>
