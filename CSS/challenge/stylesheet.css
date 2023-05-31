@@ -1,0 +1,67 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: coral;
+}
+
+h3 {
+  color: #805300;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.text-light {
+  font-weight: lighter;
+}
+
+#bandList {
+  border: solid 2px black;
+}
+
+#bandList > li {
+  padding-left: 40px;
+}
+
+#bandListTop {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+/* box Model Challenge */
+#boxModelChallenge > div {
+  border: 2px solid #ffa500;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(40, 148, 197);
+}
+
+#boxModelChallenge > div > div {
+  border: 1px solid orange;
+  margin-left: 1px;
+  padding: 20px;
+  background-color: pink;
+  text-indent: 2px;
+}
+
+.card-title {
+  color: black;
+}
+
+.card-content {
+  font-size: x-small;
+  text-indent: 20px;
+}
