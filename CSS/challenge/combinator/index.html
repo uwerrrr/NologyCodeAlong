@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Combinator challenge</title>
+  </head>
+  <body>
+    <!-- # Combinators challenge
+      1. Recreate the images in the challenge folder
+
+      Challenge 2: Using combinator, style the html content below as per the instructions
+
+      all p tags should be indented using margin
+      The first p tag after a h1 should be italic
+      The remaining p tags after an h1 should be dark grey
+      All p tag after an h2 should be underlined
+      All the p tags after h3 should have blue text except the first 
+    -->
+
+    <section id="challenge1">
+      <div>
+        <h1>I'm blue and Arial</h1>
+        <p>I'm red, underlined and Arial</p>
+        <ul>
+          <li>I have no bullet point</li>
+          <li>I also have no bullet point</li>
+        </ul>
+      </div>
+
+      <p>I'm coral and bold</p>
+
+      <div>
+        <h1>I'm blue and Arial</h1>
+        <p>I'm red, underlined and Arial</p>
+        <ul>
+          <li>I have no bullet point</li>
+        </ul>
+        <p>I'm red, underlined and Arial</p>
+      </div>
+      <p>I'm coral and bold</p>
+      <p>I'm brown</p>
+      <p>I'm also brown</p>
+    </section>
+    <hr />
+    <section id="challenge2">
+      <h1>First Header</h1>
+      <div>
+        <p>Paragraph A</p>
+        <p>Paragraph B</p>
+        <p>Paragraph C</p>
+      </div>
+
+      <h2>Second Header</h2>
+      <div>
+        <p>Paragraph D</p>
+        <p>Paragraph E</p>
+        <p>Paragraph F</p>
+      </div>
+
+      <h3>Third Header</h3>
+      <p>Paragraph G</p>
+      <p>Paragraph H</p>
+      <p>Paragraph I</p>
+    </section>
+
+    <style>
+      /* challenge 1 */
+      #challenge1 div {
+        border: 1px solid black;
+      }
+      #challenge1 div h1 {
+        color: blue;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: xx-large;
+      }
+      #challenge1 div p {
+        color: red;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: underline;
+      }
+      #challenge1 div ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-indent: 30px;
+      }
+      #challenge1 div + p {
+        color: coral;
+        font-weight: bold;
+      }
+
+      #challenge1 p + p {
+        color: brown;
+      }
+
+      /* challenge 2 */
+      #challenge2 p {
+        text-indent: 20px;
+      }
+      #challenge2 h1 + div {
+        font-style: italic;
+        color: black;
+      }
+      #challenge2 h1 + div p + p {
+        color: grey;
+      }
+      #challenge2 h2 + div {
+        text-decoration: underline;
+      }
+      #challenge2 h3 + p ~ p {
+        color: blue;
+      }
+    </style>
+  </body>
+</html>
