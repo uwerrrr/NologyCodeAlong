@@ -1,4 +1,3 @@
-#Test git
+# Oscar's Nology code along and challenges practiced
 
-##Second line
-
+This repo is laid out based on the technologies that have been trained.
