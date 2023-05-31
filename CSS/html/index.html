@@ -5,39 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- styles -->
-    <link rel="stylesheet" href="../css/style.css" />
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
 
-    <!-- font -->
+    <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
     <title>CSS Basics</title>
   </head>
   <body>
-    <!-- <h1 style="color: green">We are learning CSS</h1> -->
-    <h1>We are learning CSS</h1>
-    <h3>1st subheading</h3>
-    <h3>2nd subheading</h3>
+    <!-- What is CSS? -->
+    <!-- Cascading Style Sheet -->
+    <!--  We use it to style html -->
+    <!-- Not just about the looks, but also about making sure users can easily interact with our pages -->
 
-    <div>
-      <img src="http://placekitten.com/g/200/300" alt="kitten" />
-      <p id="1kitten">This is 1st kitten</p>
-    </div>
+    <!-- 3 different ways we add css to our code -->
+    <!-- inline css -->
+    <!-- <style></style> -->
+    <!-- external stylesheet -->
 
+    <!-- I want a heading, I want it to be blue -->
+    <h3 style="color: blue">We are learning CSS</h3>
+    <h3>Another heading</h3>
+    <h3>One more heading</h3>
+
+    <!-- change the background color of the whole page -->
+    <!-- lets change all the fonts to Open Sans x -->
+
+    <!-- an h1 - underlined, centered, have a different color -->
+    <h1>CSS Basics</h1>
+    <!-- div with h4 and a paragraph and an img inside x2-->
     <div>
-      <img src="http://placekitten.com/g/200/300" alt="kitten" />
-      <p id="" class="para">This is 2nd kitten</p>
+      <img src="http://placekitten.com/g/300/300" alt="cat" />
+      <p id="whitePara">This is a cat</p>
     </div>
+    <div class="class-one">
+      <img src="http://placekitten.com/g/300/300" alt="cat" />
+      <p>This is a cat</p>
+    </div>
+    <!--  border, some background color, I want one of the paragraph to be a different color -->
+    <!-- I want my divs to have a margin and a padding -->
 
     <!-- <style>
-      h3 {
-        color: chocolate;
-      }
-    </style> -->
+            h3 {
+                color: blueviolet;
+            }
+        </style> -->
   </body>
 </html>

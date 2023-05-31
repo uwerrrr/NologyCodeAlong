@@ -1,28 +1,42 @@
 /* universal selector */
 * {
-  font-family: "Noto Sans", sans-serif;
-  background-color: #faebd7;
-}
-
-h1 {
-  color: deepskyblue;
-  text-decoration: underline;
+  font-family: "Open Sans", sans-serif;
+  /* background-color: beige; */
 }
 
 h3 {
   color: brown;
 }
 
+body {
+  background-color: rosybrown;
+}
+
+h1 {
+  color: white;
+  text-decoration: underline;
+  text-align: center;
+}
 div {
-  border: 1px solid coral;
+  border: 4px solid white;
+  /* border-right: 4px solid white; */
+  width: 300px;
+  /* height: 600px; */
+  background-color: #a4f9c2d0;
+  /* padding: 20px; */
+  /* padding: 1px 10px 3px 20px; */
+  /* padding: 10px 30px; */
+  padding: 5px 20px 50px;
+  margin: 40px;
 }
 
 /* class selector */
+.class-one > p {
+  color: green;
+}
 
-/* id selector */
-#1kitten {
-  padding: 20px 10px 5px;
-  background-color: darkgreen;
+#whitePara {
+  color: white;
 }
 
 /* BOX MODEL */
