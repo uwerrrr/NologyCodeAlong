@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-class challenge</title>
+  </head>
+  <body>
+    <!-- # 
+      Pseudo Classes Challenge 
+      1. Recreate the form image from the challenge folder
+
+      2. Links Challenge 
+      Add a link to an HTML page 
+      Change the color of the link when the page has not been visited 
+      Change the color of the link when the page has been visited 
+      Choose a third color and a background color for when the link is clicked (on mouse down) 
+      Choose a final color for when the link is hovered. 
+    -->
+
+    <section>
+      <h1>Challenge 1</h1>
+
+      <table>
+        <tr>
+          <td>
+            <label for="enabled">Enabled Input:</label>
+          </td>
+          <td>
+            <input type="text" id="enabled" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="disabled">Disabled Input:</label>
+          </td>
+          <td>
+            <input type="text" id="disabled" disabled />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="enabledRequired">Required / Enabled Input:</label>
+          </td>
+          <td>
+            <input type="text" id="enabledRequired" required />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="">
+            <input type="submit" disabled value="Disabled Submit" />
+            <input type="submit" value="Enabled Submit" />
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <hr />
+    <section>
+      <h1>Challenge 2</h1>
+      <a href="theverge.com">The Verge</a><br />
+      <a href="https://placekitten.com/">Kitten Images</a><br />
+      <a href="https://www.google.com">Google</a><br />
+      <a href="https://www.youtube.com">YouTube</a><br />
+      <a href="https://www.amazon.com">Amazon</a><br />
+    </section>
+
+    <style>
+      input {
+        border-radius: 5px;
+      }
+      input:disabled {
+        border: 1px solid lightgrey;
+      }
+      input:enabled {
+        background-color: rgb(43, 178, 227);
+        border: 1px solid black;
+      }
+      input:required {
+        border: 2px solid red;
+      }
+
+      /* Link styles for different states */
+      a:link {
+        color: blue; /* Color for unvisited link */
+      }
+
+      a:visited {
+        color: purple; /* Color for visited link */
+      }
+
+      a:active {
+        color: green; /* Color for link when clicked */
+        background-color: yellow; /* Background color for link when clicked */
+      }
+
+      a:hover {
+        color: red; /* Color for link on hover */
+      }
+    </style>
+  </body>
+</html>
