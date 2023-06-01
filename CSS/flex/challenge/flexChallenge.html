@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex challenge</title>
+  </head>
+  <body>
+    <!-- # Flex Challenges
+
+      1. MVP:
+      Flex container should be centered on the page
+      Flex container should be 900px wide, 300px tall
+      Use percentages for the height and width\* of the card
+      Use ids to color the card blocks
+
+      2. All size dimensions should be the same as the previous challenge
+      Content should wrap to the next row when a 4th card is added
+
+      3. All size dimensions should be the same as the previous challenge
+      Content should wrap to the next row when a 4th card is added
+      Fifth card should be displayed at the end of the flex-container 
+    -->
+    <main>
+      <section id="justifyContent">
+        <div class="blue">
+          <p>Card 1</p>
+        </div>
+        <div class="orange">
+          <p>Card 2</p>
+        </div>
+        <div class="green">
+          <p>Card 3</p>
+        </div>
+      </section>
+      <hr />
+      <section id="justifyContentWrapping1" class="resize-child-div heightx2">
+        <div class="blue">
+          <p>Card 4</p>
+        </div>
+        <div class="orange">
+          <p>Card 5</p>
+        </div>
+        <div class="green">
+          <p>Card 6</p>
+        </div>
+        <div class="red">
+          <p>Card 7</p>
+        </div>
+      </section>
+      <hr />
+      <section id="justifyContentWrapping2" class="resize-child-div heightx2">
+        <div class="blue">
+          <p>Card 8</p>
+        </div>
+        <div class="orange">
+          <p>Card 9</p>
+        </div>
+        <div class="green">
+          <p>Card 10</p>
+        </div>
+        <div class="red">
+          <p>Card 11</p>
+        </div>
+        <div class="purple">
+          <p>Card 12</p>
+        </div>
+      </section>
+    </main>
+
+    <style>
+      section {
+        height: 300px;
+        width: 900px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .blue {
+        background-color: rgb(40, 162, 249);
+      }
+      .orange {
+        background-color: rgb(249, 149, 55);
+      }
+      .green {
+        background-color: rgb(53, 249, 131);
+      }
+      .red {
+        background-color: rgb(247, 71, 97);
+      }
+      .purple {
+        background-color: rgb(255, 103, 232);
+      }
+
+      .resize-child-div div {
+        height: 300px;
+        width: 33.33333%;
+      }
+
+      .heightx2 {
+        height: 600px;
+      }
+
+      #justifyContent div {
+        height: 100%;
+        width: 300px;
+      }
+
+      #justifyContentWrapping1 {
+        justify-content: flex-start;
+      }
+
+      #justifyContentWrapping2 {
+        justify-content: space-between;
+
+        /* flex-wrap: row wrap; */
+      }
+    </style>
+  </body>
+</html>
