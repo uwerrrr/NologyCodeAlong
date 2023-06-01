@@ -23,56 +23,65 @@
       Fifth card should be displayed at the end of the flex-container 
     -->
     <main>
-      <section id="justifyContent">
-        <div class="blue">
-          <p>Card 1</p>
-        </div>
-        <div class="orange">
-          <p>Card 2</p>
-        </div>
-        <div class="green">
-          <p>Card 3</p>
-        </div>
-      </section>
-      <hr />
-      <section id="justifyContentWrapping1" class="resize-child-div heightx2">
-        <div class="blue">
-          <p>Card 4</p>
-        </div>
-        <div class="orange">
-          <p>Card 5</p>
-        </div>
-        <div class="green">
-          <p>Card 6</p>
-        </div>
-        <div class="red">
-          <p>Card 7</p>
-        </div>
-      </section>
-      <hr />
-      <section id="justifyContentWrapping2" class="resize-child-div heightx2">
-        <div class="blue">
-          <p>Card 8</p>
-        </div>
-        <div class="orange">
-          <p>Card 9</p>
-        </div>
-        <div class="green">
-          <p>Card 10</p>
-        </div>
-        <div class="red">
-          <p>Card 11</p>
-        </div>
-        <div class="purple">
-          <p>Card 12</p>
-        </div>
-      </section>
+      <center>
+        <section id="justifyContent">
+          <div class="blue">
+            <p>Card 1</p>
+          </div>
+          <div class="orange">
+            <p>Card 2</p>
+          </div>
+          <div class="green">
+            <p>Card 3</p>
+          </div>
+        </section>
+        <hr />
+        <section id="justifyContentWrapping1" class="resize-child-div heightx2">
+          <div class="blue">
+            <p>Card 4</p>
+          </div>
+          <div class="orange">
+            <p>Card 5</p>
+          </div>
+          <div class="green">
+            <p>Card 6</p>
+          </div>
+          <div class="red">
+            <p>Card 7</p>
+          </div>
+        </section>
+        <hr />
+        <section id="justifyContentWrapping2" class="resize-child-div heightx2">
+          <div class="blue">
+            <p>Card 8</p>
+          </div>
+          <div class="orange">
+            <p>Card 9</p>
+          </div>
+          <div class="green">
+            <p>Card 10</p>
+          </div>
+          <div class="red">
+            <p>Card 11</p>
+          </div>
+          <div class="purple">
+            <p>Card 12</p>
+          </div>
+        </section>
+      </center>
     </main>
 
     <style>
+      center {
+        border: 1px black solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+      }
       section {
-        height: 300px;
-        width: 900px;
+        /* height: 300px;
+        width: 900px; */
         border: 1px solid black;
         display: flex;
         align-items: center;
@@ -84,6 +93,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        width: calc(900px / 3);
+        height: 300px;
       }
 
       .blue {
@@ -102,18 +113,12 @@
         background-color: rgb(255, 103, 232);
       }
 
-      .resize-child-div div {
-        height: 300px;
-        width: 33.33333%;
-      }
-
       .heightx2 {
-        height: 600px;
+        height: calc(300px * 2);
       }
 
-      #justifyContent div {
-        height: 100%;
-        width: 300px;
+      .resize-child-div div {
+        height: 50%;
       }
 
       #justifyContentWrapping1 {
