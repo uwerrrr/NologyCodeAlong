@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex direction challenge</title>
+  </head>
+  <body>
+    <!-- # Flex Direction challenge
+      MVP:
+      The main container is 600px wide.
+      Each card is 100px wide & 100px high.
+      Cards are ordered from 1 to 8 in the HTML file. 
+    -->
+    <main>
+      <section>
+        <div id="oneToFour">
+          <div class="card blue"><p>Card 1</p></div>
+          <div class="card orange"><p>Card 2</p></div>
+          <div class="card green"><p>Card 3</p></div>
+          <div class="card red"><p>Card 4</p></div>
+        </div>
+        <div id="fiveToEight">
+          <div class="card yellow"><p>Card 5</p></div>
+          <div class="card lightgray"><p>Card 6</p></div>
+          <div class="card teal"><p>Card 7</p></div>
+          <div class="card purple"><p>Card 8</p></div>
+        </div>
+      </section>
+    </main>
+
+    <style>
+      /* main {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        justify-items: center;
+      } */
+
+      main {
+        display: flex;
+        justify-content: center;
+      }
+
+      section {
+        width: 600px;
+        border: 1px solid black;
+
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      #oneToFour {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      #fiveToEight {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .card {
+        width: 100px;
+        height: 100px;
+        margin: 6px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* color */
+      .blue {
+        background-color: #d9edf8;
+      }
+      .orange {
+        background-color: #ffd6a5;
+      }
+      .green {
+        background-color: #e4f1ee;
+      }
+      .red {
+        background-color: #ffadad;
+      }
+      .yellow {
+        background-color: #fdffb6;
+      }
+      .purple {
+        background-color: #dedaf4;
+      }
+      .lightgray {
+        background-color: lightgray;
+      }
+      .teal {
+        background-color: #a8cad6;
+      }
+      .lightcoral {
+        background-color: lightcoral;
+      }
+    </style>
+  </body>
+</html>
