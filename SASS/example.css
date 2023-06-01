@@ -23,10 +23,32 @@ section p span {
   color: white;
 }
 .btn:hover {
+  /* & represent the parent element */
   background-color: white;
   border: 2px solid rebeccapurple;
   color: rebeccapurple;
   transition: 0.1s;
+}
+
+.photo__img--framed {
+  /* incremental style changes */
+}
+.photo__caption--large {
+  /* incremental style changes */
+}
+
+.btn {
+  display: inline-block;
+  color: blue;
+}
+.btn--secondary {
+  color: green;
+}
+
+.photo {
+  /* Specificity of 10 */
+  /* Specificity of 10 */
+  /* Specificity of 10 */
 }
 
 /*# sourceMappingURL=example.css.map */

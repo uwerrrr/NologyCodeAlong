@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>SCSS Challenge</title>
+  </head>
+  <body>
+    <!-- Challenge
+      Recreate the following image
+      Use BEM conventions
+      Use SCSS and nesting to apply those conventions 
+    -->
+    <section class="section">
+      <div class="box box--green box--dash box--3px">
+        <h1 class="box__heading">My first header section</h1>
+        <p class="box__para">
+          This header has a green 3px border that is dashed
+        </p>
+        <p class="box__para--blue box__para--strike">
+          I'm blue line though paragraph
+        </p>
+      </div>
+
+      <div class="box box--2px box--coral">
+        <h1 class="box__heading--center">I'm in the center</h1>
+        <p class="box__para">
+          This header section has a coral 2px solid border
+        </p>
+        <p class="box__para--blue box__para--strike box__para--right">
+          I'm blue line though paragraph, I'm also aligned to the right
+        </p>
+      </div>
+    </section class="section">
+
+
+    <section>
+      <div class="box">
+        <h1 class="box__heading box__heading--blue">I'm blue and Arial</h1>
+        <p class="box__para--red box__para--underline">I'm red, underlined and Arial</p>
+        <ul class="box__list">
+          <li>I have no bullet point</li>
+          <li>I also have no bullet point</li>
+        </ul>
+      </div>
+
+      <p class="section__para section__para--bold section__para--coral">I'm coral and bold</p>
+
+      <div class="box">
+        <h1 class="box__heading box__heading--blue">I'm blue and Arial</h1>
+        <p class="box__para--red box__para--underline">I'm red, underlined and Arial</p>
+        <ul class="box__list">
+          <li>I have no bullet point</li>
+        </ul>
+        <p class="box__para--red box__para--underline">I'm red, underlined and Arial</p>
+      </div>
+
+      <p class="section__para section__para--bold section__para--coral">I'm coral and bold</p>
+      <p class="section__para section__para--brown">I'm brown</p>
+      <p class="section__para section__para--brown">I'm also brown</p>
+    </section>
+  </body>
+</html>

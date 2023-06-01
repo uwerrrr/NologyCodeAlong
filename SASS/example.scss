@@ -23,9 +23,41 @@ section {
   color: white;
 
   &:hover {
+    /* & represent the parent element */
     background-color: white;
     border: 2px solid rebeccapurple;
     color: rebeccapurple;
     transition: 0.1s;
   }
+}
+
+.photo {
+  &__img {
+    &--framed {
+      /* incremental style changes */
+    }
+  }
+
+  &__caption {
+    &--large {
+      /* incremental style changes */
+    }
+  }
+}
+.btn {
+  display: inline-block;
+  color: blue;
+
+  &--secondary {
+    color: green;
+  }
+}
+
+.photo {
+  /* Specificity of 10 */
+
+  &__img {
+  } /* Specificity of 10 */
+  &__caption {
+  } /* Specificity of 10 */
 }

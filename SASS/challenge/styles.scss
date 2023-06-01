@@ -1,0 +1,71 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.section {
+  margin-bottom: 100px;
+  &__para {
+    &--bold {
+      font-weight: bold;
+    }
+    &--coral {
+      color: coral;
+    }
+    &--brown {
+      color: brown;
+    }
+  }
+}
+
+.box {
+  border: 1px solid black;
+
+  &--green {
+    border-color: green;
+  }
+  &--coral {
+    border-color: coral;
+  }
+  &--dash {
+    border-style: dashed;
+  }
+  &--2px {
+    border-width: 2px;
+  }
+  &--3px {
+    border-width: 3px;
+  }
+
+  &__heading {
+    font-size: xx-large;
+    &--center {
+      text-align: center;
+    }
+    &--blue {
+      color: blue;
+    }
+  }
+
+  &__para {
+    &--blue {
+      color: blue;
+    }
+    &--red {
+      color: red;
+    }
+    &--strike {
+      text-decoration: line-through;
+    }
+    &--underline {
+      text-decoration: underline;
+    }
+    &--right {
+      text-align: right;
+    }
+  }
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 30px;
+  }
+}
