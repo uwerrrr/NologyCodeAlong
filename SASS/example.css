@@ -1,0 +1,32 @@
+p {
+  color: orange;
+}
+
+h1 {
+  text-decoration: underline;
+}
+
+section {
+  font-family: Arial, Helvetica, sans-serif;
+}
+section p {
+  color: red;
+}
+section p span {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.btn {
+  background-color: rebeccapurple;
+  cursor: pointer;
+  color: white;
+}
+.btn:hover {
+  background-color: white;
+  border: 2px solid rebeccapurple;
+  color: rebeccapurple;
+  transition: 0.1s;
+}
+
+/*# sourceMappingURL=example.css.map */
