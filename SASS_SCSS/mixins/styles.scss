@@ -1,0 +1,25 @@
+@use "mixins";
+
+nav {
+  @include mixins.flex(flex-start);
+  /* include what have been written in flex in mixins.scss file 
+    and change value of $justify:center to flex-start */
+  @include mixins.black-border;
+  /* include what have been written in black-border in mixins.scss file */
+  a {
+    margin-right: 1.25em;
+  }
+  width: 50%;
+}
+
+section {
+  @include mixins.flex(space-around);
+  @include mixins.black-border;
+  width: 80%;
+  div {
+    @include mixins.flex;
+    /* include what have been written in flex in mixins.scss file 
+    and keep the default value of $justify:center */
+    @include mixins.black-border;
+  }
+}

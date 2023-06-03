@@ -1,0 +1,11 @@
+.para {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  width: 70%;
+}
+.para--pill {
+  border: 3px dashed red;
+}
+
+/*# sourceMappingURL=style.css.map */

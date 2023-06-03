@@ -1,0 +1,30 @@
+@use "mixins";
+// @mixin border($color: black, $style: solid) {
+//   border: 3px $style $color;
+// }
+// @mixin flex($justify: center) {
+//   /* add parameter $justify to flex() function -> default value is center */
+//   display: flex;
+//   justify-content: $justify;
+//   align-items: center;
+// }
+.main {
+  // @include mixins.flex;
+}
+
+.para {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  width: 70%;
+  &--btn {
+    // @include mixins.border(red, dashed);
+  }
+  &--chip {
+    // @include mixins.border(blue);
+  }
+  &--pill {
+    // @include mixins.border(blue, dashed);
+    @include mixins.border(red, dashed);
+  }
+}

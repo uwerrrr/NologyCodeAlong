@@ -1,0 +1,8 @@
+@use "./partials/theme" as theme;
+@use "./modules/header.scss";
+
+.btn {
+  background-color: theme.$brand-purple;
+  color: #fff;
+  border: theme.$border-thickness solid theme.$brand-purple;
+}

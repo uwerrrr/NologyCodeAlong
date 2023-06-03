@@ -61,3 +61,20 @@ section {
   &__caption {
   } /* Specificity of 10 */
 }
+
+// SCSS Variable
+/********* color ***********/
+$blue: #d9edf8;
+$orange: #ffd6a5;
+$green: #e4f1ee;
+$red: #ffadad;
+$yellow: #fdffb6;
+$purple: #dedaf4;
+$lightgray: lightgray;
+$teal: #a8cad6;
+$lightcoral: lightcoral;
+
+$primary: $blue;
+$secondary: #dedaf4;
+$success: #e4f1ee;
+$danger: lightcoral;

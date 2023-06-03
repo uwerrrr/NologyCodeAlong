@@ -1,0 +1,9 @@
+@mixin border($color: black, $style: solid) {
+  border: 3px $style $color;
+}
+@mixin flex($justify: center) {
+  /* add parameter $justify to flex() function -> default value is center */
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}

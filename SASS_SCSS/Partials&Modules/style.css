@@ -1,0 +1,18 @@
+.header {
+  font-family: "Times New Roman", Times, serif;
+}
+.header__main-heading {
+  color: #690bf7;
+}
+
+span {
+  color: blue;
+}
+
+.btn {
+  background-color: #690bf7;
+  color: #fff;
+  border: 2px solid #690bf7;
+}
+
+/*# sourceMappingURL=style.css.map */

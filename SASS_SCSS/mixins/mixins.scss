@@ -1,0 +1,10 @@
+@mixin black-border {
+  border: 1px solid black;
+}
+
+@mixin flex($justify: center) {
+  /* add parameter $justify to flex() function -> default value is center */
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}

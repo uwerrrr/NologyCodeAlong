@@ -1,0 +1,71 @@
+.gallery {
+  display: grid;
+}
+@media only screen and (max-width: 576px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .gallery img {
+    width: 90vw;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gallery img {
+    width: 45vw;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .gallery img {
+    width: 30vw;
+  }
+}
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .gallery img {
+    width: 22vw;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .gallery img {
+    width: 15vw;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  button {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  button {
+    font-size: 22px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  button {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  button {
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  button {
+    font-size: 50px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
