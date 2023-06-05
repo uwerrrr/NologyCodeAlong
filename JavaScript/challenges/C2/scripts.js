@@ -32,8 +32,11 @@ console.log("Subtract 7: " + (age - 7));
 console.log("Multiple by 11: " + age * 11);
 
 // MVP2
-let earthDays = prompt("Number of Earth days: ");
+// let earthDays = prompt("Number of Earth days: ");
+let earthDays = 180;
 const rotateDays = 27.3; // days that Moon rotate 1 full rotation
 let rotationNum = earthDays / rotateDays;
-
+// rotationNum = rotationNum.toFixed(2);
+rotationNum = Math.round(rotationNum);
 console.log(`The moon has rotated ${rotationNum} rotation around the Earth`);
+// 22
