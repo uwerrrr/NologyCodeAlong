@@ -91,6 +91,9 @@ if (x > y) {
 // console.log(stringToPrint);
 
 // ------------------------------------------------------------ //
+// ------------------------------------------------------------ //
+// ------------------------------------------------------------ //
+// ------------------------------------------------------------ //
 /* ## Challenge: Tell me the day!
 MVP:
 Create a switch block that will log a string for each day of the week.
@@ -143,12 +146,34 @@ Use the following image as a reference
 Bonus:
 Store the value of the child’s eye colour and write a switch statement - depending on the child’s eye colour consol log if it's your favourite eye colour, your least favourite eye colour or the mediocre colour */
 
-let parent1 = "brown";
-let parent2 = "green";
+let parent1 = "blue";
+let parent2 = "brown";
 let brownPercent = null;
 let greenPercent = null;
 let bluePercent = null;
 let text = null;
+
+function addChildEyeColor(brown, green, blue) {
+  let maxVal = Math.max(brown, green, blue);
+  let childEyeColor = null;
+
+  switch (maxVal) {
+    case 50:
+      childEyeColor = "can't verify";
+      break;
+    case brown:
+      childEyeColor = "brown";
+      break;
+    case green:
+      childEyeColor = "green";
+      break;
+    default:
+      childEyeColor = "blue";
+      break;
+  }
+
+  return childEyeColor;
+}
 
 if (parent1 === parent2) {
   if (parent1 == "brown") {
@@ -156,7 +181,7 @@ if (parent1 === parent2) {
     greenPercent = 18.75;
     bluePercent = 6.25;
   } else if (parent1 == "green") {
-    brownPercent = "<1";
+    brownPercent = 0.6;
     greenPercent = 75;
     bluePercent = 25;
   } else {
@@ -191,5 +216,21 @@ if (parent1 === parent2) {
 
 if (text != "unknown") {
   text = `Your eye colour are ${parent1} and ${parent2}, the chances of your child having brown eyes is ${brownPercent}%, green eyes is ${greenPercent}% and blue eye is ${bluePercent}%.`;
+  console.log(text);
+  let childEyeColor = addChildEyeColor(brownPercent, greenPercent, bluePercent);
+  switch (childEyeColor) {
+    case "can't verify":
+      console.log("The child eye color can not be verified");
+      break;
+    case "brown":
+      console.log("Brown is a mediocre color");
+      break;
+    case "green":
+      console.log("Green is my least favorite color");
+      break;
+
+    default:
+      console.log("Blue is my most favorite color");
+      break;
+  }
 }
-console.log(text);
