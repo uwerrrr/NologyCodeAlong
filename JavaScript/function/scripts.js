@@ -78,4 +78,4 @@ const shorterArea = (width, height) => width * height;
 const shorterCalcArea = shorterArea(2, 3);
 console.log(shorterCalcArea);
 
-// function declarations are hoisted, we can use them before tey are declared
+// function declarations are hoisted, we can use them before they are declared
