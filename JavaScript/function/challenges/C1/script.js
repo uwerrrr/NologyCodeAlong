@@ -10,7 +10,8 @@ moonOrbits(365) => 13.359
 console.log("Challenge 1: ");
 function moonOrbits(earthDay) {
   const moonOrbitDay = 27.3;
-  return (earthDay / moonOrbitDay).toFixed(4);
+
+  return (earthDay / moonOrbitDay).toFixed(3);
 }
 
 console.log(moonOrbits(55));
@@ -97,6 +98,10 @@ lessThan100(3, 77) ➞ true
 ``` */
 console.log("Challenge 6: ");
 
+console.log(lessThan100(22, 15));
+console.log(lessThan100(83, 34));
+console.log(lessThan100(3, 77));
+
 function lessThan100(num1, num2) {
   let sum = num1 + num2;
   let boolean;
@@ -113,6 +118,4 @@ function lessThan100(num1, num2) {
   return result;
 }
 
-console.log(lessThan100(22, 15));
-console.log(lessThan100(83, 34));
-console.log(lessThan100(3, 77));
+const anotherLessThan100 = (num1, num2) => (num1 + num2 < 100 ? true  : false);
