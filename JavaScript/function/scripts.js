@@ -79,3 +79,27 @@ const shorterCalcArea = shorterArea(2, 3);
 console.log(shorterCalcArea);
 
 // function declarations are hoisted, we can use them before they are declared
+
+/* ----------- LOOP -------------- */
+
+for (let i = 1; i < 6; i++) {
+  console.log(i);
+}
+
+let i = 1;
+while (i < 6) {
+  console.log(i, "from while loop");
+  i++;
+}
+
+// function to get random int number from 0 to max
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+// Generate a random number untill that number is 5
+let num = 1;
+while (num !== 5) {
+  console.log(`The random number is ${num}`);
+  num = getRandomInt(10);
+}
