@@ -74,5 +74,13 @@ for (let i = 0; i < letters.length; i++) {
 
 console.log(numOfO);
 
-// break
 // continue
+
+/********* break *********/
+for (let i = 0; i < array.length; i++) {
+  const element = array[i];
+}
+
+function name(params) {
+  
+}
