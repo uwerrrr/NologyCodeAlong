@@ -12,3 +12,9 @@ const numbers = [5, 10, 15, 20];
 const numbersDecre = numbers.map((number) => number - 5);
 
 console.log(numbersDecre);
+
+/******** find ********/
+const fruit = [apple];
+
+const array = [];
+array.reduce()
