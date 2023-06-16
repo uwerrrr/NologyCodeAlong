@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./xscripts.js" defer></script>
+    <title>Lad in the pub</title>
+  </head>
+  <body>
+    <h1>Lad in the pub</h1>
+    <div class="container">
+      <p>Will you have a beer tonight?</p>
+      <img src="./assets/beer.svg" />
+      <form class="form">
+        <label for="age">How old are you?</label>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          min="0"
+          max="120"
+          placeholder="Enter your age"
+          required
+        />
+        <label>What country are you in?</label>
+        <select
+          id="country"
+          name="country"
+          placeholder="Select a country"
+          required
+        >
+          <option value="Australia">Australia</option>
+          <option value="Poland">Poland</option>
+          <option value="UK">UK</option>
+          <option value="USA">USA</option>
+        </select>
+        <label for="drunk">How drunk are you?</label>
+        <input
+          placeholder="Enter a number between 0 and 5"
+          type="number"
+          id="drunk"
+          name="drunk"
+          min="0"
+          max="5"
+          required
+        />
+        <input id="btn" type="submit" value="Check if you're allowed in" />
+      </form>
+      <div id="message" class="message"></div>
+    </div>
+  </body>
+</html>
