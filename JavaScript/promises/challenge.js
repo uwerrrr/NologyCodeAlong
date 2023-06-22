@@ -20,44 +20,36 @@
 // call this function three times with different numbers and values of dec and delay
 // console.log the value of rejected or resolved promise
 
-
 const delayedIncDec = (n, mode, delay = 2500) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (mode === "inc") {
-        resolve(++n);
-      } else if (mode === "dec") {
-        resolve(--n);
-      } else {
-        reject(`Mode is either "inc" or "dec"`);
-      }
-    }, delay);
-  });
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (mode === "inc" && typeof n === "number") {
+                n++;
+                resolve(n);
+            } else if (mode === "dec" && !isNaN(n)) {
+                n--;
+                resolve(n);
+            } else {
+                reject("Invalid mode or n");
+            }
+        }, delay);
+    });
 };
 
-let result = delayedIncDec(30, "inc");
-result
-  .then((val) => {
-    console.log(`val: `, val);
-  })
-  .catch((e) => {
-    console.log(e);
-  });
+delayedIncDec(10, "inc", 2000)
+    .then((value) => {
+        console.log(value);
+    })
+    .catch((e) => console.log(e, "error"));
 
-result = delayedIncDec(30, "dec", 0);
-result
-  .then((val) => {
-    console.log(val);
-  })
-  .catch((e) => {
-    console.log(e);
-  });
+delayedIncDec(8, "dec")
+    .then((val) => console.log(val))
+    .catch((e) => console.log(e));
 
-result = delayedIncDec(30, "abc");
-result
-  .then((val) => {
-    console.log(val);
-  })
-  .catch((e) => {
-    console.log(e);
-  });
+delayedIncDec(34, "invalid", 1000)
+    .then((val) => console.log(val))
+    .catch((e) => console.log(e));
+
+delayedIncDec("hello", "dec")
+    .then((val) => console.log(val))
+    .catch((e) => console.log(e));
