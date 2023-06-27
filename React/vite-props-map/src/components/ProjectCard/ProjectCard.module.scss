@@ -1,0 +1,14 @@
+.card {
+  border-bottom: 2px solid black;
+}
+
+.link_wrapper {
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 0.5em;
+}
+
+.grey__background {
+  background-color: grey;
+}
