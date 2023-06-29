@@ -13,6 +13,8 @@ export const TaskCardList = (props) => {
     const updatedTasks = tasks.filter((task) => task.id != taskID);
     // filter id that is different from the clicked task id
 
+    // can delete with index as well because data is Array of Obj
+
     setTasks(updatedTasks);
     // set state value of tasks = updatedTasks
   };

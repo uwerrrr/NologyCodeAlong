@@ -1,0 +1,16 @@
+.planet_card {
+  color: white;
+  background-color: black;
+  padding: 0.25em;
+  margin-bottom: 1em;
+
+  &.moonless {
+    background-color: lightgray;
+    color: black;
+  }
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
