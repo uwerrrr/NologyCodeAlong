@@ -1,13 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { JokeList } from '../components/JokeList/JokeList';
-import { getJokesBySearchTerm } from '../services/joke-services';
+import React, { useEffect, useState } from "react";
+import { JokeList } from "../components/JokeList/JokeList";
+import { getJokesBySearchTerm } from "../services/joke-services";
 
 const JokeLoader = ({ searchTerm }) => {
   const [jokes, setJokes] = useState([]);
-  const [error, setError] = useState(null);
+
   const [loading, setLoading] = useState(false);
+  // loading state is to display 'loading' on page when data 
+
+  const [error, setError] = useState(null); 
+  // set error as a state to display its message on page
 
   useEffect(() => {
+    // runs when searchTerm state value is changed
+    // searchTerm is passed from SearchBar via App
+    
     setError(null);
     setLoading(true);
     setJokes([]);
