@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
 import { useState } from "react";
+import style from "./Form.module.scss";
 
 const RefForm = ({ handleSubmit }) => {
+  // state
   const [errorStr, setErrorStr] = useState("");
 
-  const formRef = useRef(null);
-
+  // validation
   const validateForm = (data) => {
     if (data.username === "") return false;
     if (data.email === "") return false;
@@ -13,6 +14,10 @@ const RefForm = ({ handleSubmit }) => {
     if (data.passwordConfirm === "") return false;
     return true;
   };
+
+  // define formRef
+  const formRef = useRef(null);
+
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -27,7 +32,7 @@ const RefForm = ({ handleSubmit }) => {
     for (let key of formData.keys()) {
       submittedData[key] = data.get(key);
     }
-    // method to get actual input data from formData
+    // method to get actual input data from formData using name attribute
 
     const isValid = validateForm(submittedData);
     if (isValid) {
@@ -39,11 +44,40 @@ const RefForm = ({ handleSubmit }) => {
     }
   };
 
-  <form onSubmit={onSubmit} ref={formRef}>
-    {" "}
-  </form>;
+  return (
+    <>
+      <form className={style.form} onSubmit={onSubmit} ref={formRef}>
+        {/* set ref to form DOM with ref={formRef}*/}
 
-  return <div>RefForm</div>;
+        <div className={style.field}>
+          <label htmlFor="usernameInput">Username</label>
+          <input id="usernameInput" type="text" name="username" />
+        </div>
+        <div className={style.field}>
+          <label htmlFor="emailInput">Email</label>
+          <input id="emailInput" type="email" name="email" />
+        </div>
+        <div className={style.field}>
+          <label htmlFor="passwordInput">Password</label>
+          <input id="passwordInput" type="password" name="password" />
+        </div>
+
+        <div className={style.field}>
+          <label htmlFor="passwordConfirmInput">Password Confirmation</label>
+          <input
+            id="passwordConfirmInput"
+            type="password"
+            name="passwordConfirm"
+          />
+        </div>
+
+        <div className={style.field}>
+          <button>Register</button>
+        </div>
+      </form>
+      {errorStr && <p>{errorStr}</p>}
+    </>
+  );
 };
 
 export default RefForm;
