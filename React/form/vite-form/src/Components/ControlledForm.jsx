@@ -1,5 +1,5 @@
-import style from "./Form.module.scss";
 import { useEffect, useState } from "react";
+import style from "./Form.module.scss";
 
 const ControlledForm = ({ handleSubmit }) => {
   // If we use state for every field we have lots of repeated code
@@ -67,6 +67,7 @@ const ControlledForm = ({ handleSubmit }) => {
           name="username"
           value={formValues.username}
           onChange={onInputChange}
+          required
         />
         {/* set value = formValues.username state */}
         {/* (onChange = { onInputChange }) -> when user type -> update formValues.username state value */}
@@ -106,10 +107,9 @@ const ControlledForm = ({ handleSubmit }) => {
       )}
 
       <div className={style.field}>
-        <button disabled={!isFormValid}>Register</button>
+        <button >Register</button>
       </div>
       {/* button disabled=true when isFormValid false */}
-      
     </form>
   );
 };

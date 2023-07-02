@@ -1,6 +1,6 @@
 ## Challenge
 
-Create a buisness card generator.
+Create a business card generator.
 MVP:
 
 - Create a form with appropriate fields for a business card

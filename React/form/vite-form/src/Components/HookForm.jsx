@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import style from "./Form.module.scss";
-import { yupResolver } from "@hookform/resolvers/yup";
+// import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "./schema";
 // validation using yup library
 // rule set is defined in schema.js file

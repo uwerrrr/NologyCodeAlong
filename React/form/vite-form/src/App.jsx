@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import ControlledForm from "./Components/ControlledForm";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [formSuccess, setFormSuccess] = useState(false);
+  const [username, setUsername] = useState("");
 
+  const formSubmit = (data) => {
+    console.log("Form submitted");
+    console.log(data);
+    setFormSuccess(true);
+    setUsername(data.username);
+  };
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ControlledForm handleSubmit={formSubmit} />
+      {/* <HookForm formSubmit={formSubmit} /> */}
+      {formSuccess && <p>Sucessfully submitted form {username}</p>}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

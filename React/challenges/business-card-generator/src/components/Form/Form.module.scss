@@ -1,0 +1,17 @@
+.form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  padding: 0.25em;
+}
+
+.error {
+  font-size: smaller;
+  color: red;
+}
