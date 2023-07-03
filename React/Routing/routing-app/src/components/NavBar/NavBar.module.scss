@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 1em;
+  gap: 0.5em;
+}
+
+.link {
+  &:hover {
+    color: orange;
+  }
+}
+
+.active_link {
+  text-decoration: underline;
+  color: orange;
+  &:visited {
+    color: orange;
+  }
+  &:hover {
+    color: blue;
+  }
+}

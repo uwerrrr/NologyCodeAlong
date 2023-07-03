@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio",
+    "description": "A Portfolio about me",
+    "deployedLink": "https://netlify.com",
+    "githubLink": "https://github.com",
+    "techStack": ["HTML", "CSS", "SCSS"]
+  },
+  {
+    "id": 2,
+    "title": "FakeOs",
+    "description": "Replicate an operating system with JavaScript",
+    "deployedLink": "https://netlify.com",
+    "githubLink": "https://github.com",
+    "techStack": ["HTML", "SCSS", "JavaScript"]
+  },
+  {
+    "id": 3,
+    "title": "Morse Code",
+    "description": "A morse code translator built in JavaScript",
+    "deployedLink": "https://netlify.com",
+    "githubLink": "https://github.com",
+    "techStack": ["HTML", "SCSS", "JavaScript"]
+  },
+  {
+    "id": 4,
+    "title": "Google Books",
+    "description": "A google books search engine using React and Apis",
+    "deployedLink": "https://netlify.com",
+    "githubLink": "https://github.com",
+    "techStack": ["React", "SCSS"]
+  },
+  {
+    "id": 5,
+    "title": "E-commerce",
+    "description": "A shop",
+    "deployedLink": "https://netlify.com",
+    "githubLink": "https://github.com",
+    "techStack": ["React", "SCSS", "Firestore"]
+  },
+  {
+    "id": 6,
+    "title": "Minesweeper",
+    "description": "A cli version of minesweeper",
+    "githubLink": "https://github.com",
+    "techStack": ["Java"]
+  },
+  {
+    "id": 7,
+    "title": "Long description",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam atque cumque totam temporibus rerum quam accusantium ab quos hic suscipit dolores placeat, blanditiis molestiae odit cum ipsa tempore obcaecati voluptate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati porro ea natus nulla ipsa quisquam, modi hic voluptatem suscipit animi? Cum vero minima, repudiandae labore eligendi facilis voluptatum sapiente assumenda. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nesciunt qui, similique molestias, maiores natus totam odit accusantium cumque harum, earum magnam delectus id fugiat expedita quaerat officiis culpa. Vero.Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium id hic aperiam ad totam ratione unde, sit consectetur explicabo vero neque reprehenderit maxime soluta veniam placeat? Suscipit incidunt ut possimus.",
+    "deployedLink": "https://netlify.com",
+    "githubLink": "https://github.com",
+    "techStack": ["React", "SCSS", "Firestore"]
+  }
+]
