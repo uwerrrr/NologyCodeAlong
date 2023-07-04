@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import ProjectPage from '../../pages/ProjectPage/ProjectPage';
 import { useParams } from 'react-router-dom';
 import { getProjectById } from '../../services/project-services';
+import { LoadingSpinner } from '../../components/LoadingSpinner/LoadingSpinner';
 
 const ProjectPageLoader = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const ProjectPageLoader = () => {
   }, [id]);
   return (
     <>
-      {loading && <p>Loading</p>}
+      {loading && <LoadingSpinner/>}
       {!loading && project && <ProjectPage project={project} />}
       {!loading && error && <p>{error.message}</p>}
     </>
