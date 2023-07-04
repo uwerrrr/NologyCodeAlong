@@ -1,7 +1,7 @@
-import projects from "../data/projects.json";
+import projects from '../data/projects.json';
 
-//// if we really want to simulate network requests we can use set timeout
-//// this is good for practicing loading states
+// if we really want to simulate network requests we can use set timeout
+// this is good for practicing loading states
 // export const getAllProjects = () => {
 //   return new Promise((resolve, reject) => {
 //     setTimeout(() => {
@@ -10,12 +10,12 @@ import projects from "../data/projects.json";
 //   });
 // };
 
-//// simple way of doing this if we don't care about loading state
+// simple way of doing this if we don't care about loading state
 // export const getAllProjects = async () => {
 //   return projects;
 // };
 
-//// faking an error or value after time
+// faking an error or value after time
 // export const getProjectById = (id) => {
 //   const project = projects.find((project) => project.id === id);
 
@@ -32,7 +32,7 @@ import projects from "../data/projects.json";
 // REAL REQUESTS
 
 export const getAllProjects = async () => {
-  const response = await fetch("http://localhost:3000/projects");
+  const response = await fetch('http://localhost:3000/projects');
   const projects = await response.json();
   return projects;
 };

@@ -1,21 +1,26 @@
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import React from 'react';
+import ContactForm from '../../components/ContactForm/ContactForm';
+import { createMessage } from '../../services/message-service';
+import { useNavigate } from 'react-router-dom';
 
 const ContactPage = () => {
-  const schema = yup.object({
-    name: yup.string().required("Please enter your name"),
-  });
+  const navigate = useNavigate();
 
+  const onFormSubmit = (value) => {
+    createMessage(value).then((response) => {
+      // save form data to API json data
 
+      console.log("Form Submitted:", response);
+      navigate("/thanks");
+      // after submission -> go to thanks Page
+    });
+  };
 
   return (
-    <form>
-      <div>
-        <label htmlFor="">Name</label>
-        <input type="text" />
-      </div>
-    </form>
+    <main>
+      <h2>Contact Page</h2>
+      <ContactForm formSubmit={onFormSubmit} />
+    </main>
   );
 };
 

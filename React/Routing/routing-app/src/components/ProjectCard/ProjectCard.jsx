@@ -9,12 +9,10 @@ const ProjectCard = ({ project }) => {
       <h3>{title}</h3>
       <img
         className={style.img}
-        src="http://placekitten.com/250/250/"
-        alt="kitten"
+        src='http://placekitten.com/250/250/'
+        alt='kitten'
       />
       <Link to={`${id}`}>See More</Link>
-      {/* link to project page that has its id in URL */}
-      {/* Only `${id}` instead of `/projects/${id}` because Link knows that ProjectCard component is inside path /projects */}
     </article>
   );
 };

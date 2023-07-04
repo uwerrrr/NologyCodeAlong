@@ -1,9 +1,9 @@
-import style from "./ProjectList.module.scss";
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
-import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
+import style from './ProjectList.module.scss';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 const ProjectList = ({ projects }) => {
-  console.log("renders");
+ 
   return (
     <>
       {projects.length > 0 ? (
@@ -15,7 +15,6 @@ const ProjectList = ({ projects }) => {
       ) : (
         <LoadingSpinner />
       )}
-      {/* if there data in projects array -> populate section, else Loading.. */}
     </>
   );
 };

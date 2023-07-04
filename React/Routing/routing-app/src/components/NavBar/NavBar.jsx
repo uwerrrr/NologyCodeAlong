@@ -1,13 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import style from './NavBar.module.scss';
-
 const NavBar = () => {
-
-  // conditional styling
   const activeStyles = ({ isActive }) =>
-    // pass { isActive } as props
     isActive ? `${style.link} ${style.active_link}` : style.link;
-    // if the component is active -> add more style
 
   return (
     <nav className={style.nav}>

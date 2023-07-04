@@ -2,12 +2,10 @@ import { useState, useEffect } from 'react';
 import ProjectPage from '../../pages/ProjectPage/ProjectPage';
 import { useParams } from 'react-router-dom';
 import { getProjectById } from '../../services/project-services';
-import { LoadingSpinner } from '../../components/LoadingSpinner/LoadingSpinner';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 const ProjectPageLoader = () => {
   const { id } = useParams();
-  // destructuring Obj - get id string value from URL
-
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -21,7 +19,7 @@ const ProjectPageLoader = () => {
   }, [id]);
   return (
     <>
-      {loading && <LoadingSpinner/>}
+      {loading && <LoadingSpinner size='2xl' />}
       {!loading && project && <ProjectPage project={project} />}
       {!loading && error && <p>{error.message}</p>}
     </>
