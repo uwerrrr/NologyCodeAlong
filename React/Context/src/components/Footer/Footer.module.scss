@@ -1,0 +1,13 @@
+.footer {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  &_dark {
+    color: white;
+    background-color: black;
+  }
+  &_light {
+    background-color: white;
+    color: black;
+  }
+}

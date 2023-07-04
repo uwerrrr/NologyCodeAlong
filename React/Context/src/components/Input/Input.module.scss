@@ -1,0 +1,21 @@
+.label {
+  &_light {
+    color: black;
+  }
+  &_dark {
+    color: white;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+.input {
+  &_light {
+    color: black;
+  }
+  &_dark {
+    color: white;
+  }
+}
