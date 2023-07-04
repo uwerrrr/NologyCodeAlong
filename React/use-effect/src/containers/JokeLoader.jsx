@@ -6,7 +6,7 @@ const JokeLoader = ({ searchTerm }) => {
   const [jokes, setJokes] = useState([]);
 
   const [loading, setLoading] = useState(false);
-  // loading state is to display 'loading' on page when data 
+  // loading state is to display 'loading' on page when data is loading
 
   const [error, setError] = useState(null); 
   // set error as a state to display its message on page
@@ -18,6 +18,7 @@ const JokeLoader = ({ searchTerm }) => {
     setError(null);
     setLoading(true);
     setJokes([]);
+
     getJokesBySearchTerm(searchTerm)
       .then((jokes) => setJokes(jokes))
       .catch((error) => {
