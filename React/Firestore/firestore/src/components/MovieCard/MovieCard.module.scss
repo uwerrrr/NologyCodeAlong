@@ -1,0 +1,31 @@
+.card {
+  width: 250px;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  justify-content: center;
+}
+
+.card_image {
+  display: block;
+  width: 150px;
+  margin: auto;
+  margin-bottom: 0.25em;
+}
+
+.card_link {
+  text-align: center;
+}
+
+.delete_button {
+  border: 1px solid red;
+  color: red;
+  border-radius: 0;
+  &:hover {
+    background-color: red;
+    color: black;
+    border: 1px solid red;
+  }
+  transition: 0.2s;
+}
