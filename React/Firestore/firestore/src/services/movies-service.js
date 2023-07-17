@@ -1,4 +1,4 @@
-import { db } from "../../config/firebase";
+import { db } from '../../config/firebase';
 import {
   collection,
   getDocs,
@@ -9,10 +9,10 @@ import {
   deleteDoc,
   updateDoc,
   increment,
-} from "firebase/firestore";
+} from 'firebase/firestore';
 
 export const getAllMovies = async () => {
-  const collectionRef = collection(db, "movies");
+  const collectionRef = collection(db, 'movies');
   const querySnapshot = await getDocs(collectionRef);
   // const data = querySnapshot.docs.map(doc => {
   //   const id = doc.id
@@ -24,7 +24,7 @@ export const getAllMovies = async () => {
 
 export const createMovie = async (data) => {
   try {
-    const collectionRef = collection(db, "movies");
+    const collectionRef = collection(db, 'movies');
     const newMovieRef = await addDoc(collectionRef, { ...data, watchCount: 1 });
     return newMovieRef;
   } catch (err) {
@@ -34,7 +34,7 @@ export const createMovie = async (data) => {
 };
 
 export const getMovieSubscription = (callback) => {
-  const collectionRef = collection(db, "movies");
+  const collectionRef = collection(db, 'movies');
   const unsubscribe = onSnapshot(collectionRef, (snapshot) => {
     const movieData = snapshot.docs.map((doc) => ({
       id: doc.id,
@@ -46,26 +46,24 @@ export const getMovieSubscription = (callback) => {
 };
 
 export const getMovieById = async (id) => {
-  const docRef = doc(db, "movies", id);
+  const docRef = doc(db, 'movies', id);
   const snapshot = await getDoc(docRef);
   if (!snapshot.exists()) {
-    throw new Error("Document not found");
+    throw new Error('Document not found');
   }
 
   return { id: snapshot.id, ...snapshot.data() };
 };
 
 export const deleteMovieById = async (id) => {
-  const docRef = doc(db, "movies", id);
+  const docRef = doc(db, 'movies', id);
   await deleteDoc(docRef);
 };
 
 export const incrementWatchedById = async (id) => {
-  const docRef = doc(db, "movies", id);
+  const docRef = doc(db, 'movies', id);
   const updatedDoc = await updateDoc(docRef, {
     watchCount: increment(1),
   });
   return await getMovieById(id);
 };
-
-const docRef = doc(db, "myCollection", "documentId");
