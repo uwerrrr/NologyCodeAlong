@@ -1,5 +1,8 @@
 package interfaces;
 
+import interfaces.interfaces.IMedia;
+import interfaces.interfaces.MakesSound;
+
 // What are interfaces?
 // A way of describing the behaviour of a class - what methods it should have
 // A contract that a class must fulfill

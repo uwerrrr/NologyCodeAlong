@@ -1,5 +1,7 @@
 package interfaces;
 
+import interfaces.interfaces.IMedia;
+
 public class Book implements IMedia {
 	
 	int chapters;

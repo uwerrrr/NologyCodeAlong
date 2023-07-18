@@ -1,4 +1,4 @@
-package interfaces;
+package interfaces.interfaces;
 
 public interface IMedia {
 

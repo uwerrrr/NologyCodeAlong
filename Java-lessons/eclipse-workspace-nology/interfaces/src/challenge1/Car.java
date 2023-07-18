@@ -2,7 +2,7 @@ package challenge1;
 
 public class Car implements Vehicle {
 	
-	protected float speed; // m/h
+	protected float speed; // miles/h
 	protected String type; 
 	
 	public Car() {

@@ -1,0 +1,15 @@
+Challenge: Working with Shapes
+MVP
+Create a Area interface with 1 function signature
+getArea => returns the area of the shape
+Create another interface called Perimeter with 1 function signature
+getPerimeter => returns the perimeter of the shape
+Create 3 classes Circle, Triangle and Rhombus
+Implement Area and Perimeter for all classes
+Bonus
+Create a SurfaceArea interface with 1 function signature
+getSurfaceArea => returns the surface area of the shape
+Create a Volume interface with 1 function signature
+getVolume => returns the volume of the shape
+Implement SurfaceArea and Volume for the following classes
+Cube, Sphere, Hexahedron and Cone

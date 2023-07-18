@@ -1,5 +1,7 @@
 package interfaces;
 
+import interfaces.interfaces.MakesSound;
+
 public class AnimalUtils {
 	
 	public static void printAnimalInfo(MakesSound animal) {

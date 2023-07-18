@@ -3,9 +3,10 @@ package challenge1;
 public class Main {
 
 	public static void main(String[] args) {
-		Car myCar = new Car(20);
-		Bike myBike = new Bike(10);
+		Car myCar = new Car(20); // miles/h
+		Bike myBike = new Bike(10); // km/h
 		
+		// polymorphism
 		Vehicle[] myVehicles = {myCar, myBike};
 		
 		for (Vehicle vehicle: myVehicles) {
