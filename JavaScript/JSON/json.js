@@ -18,7 +18,7 @@ console.log(person.interests[0]);
 console.log(person["lastName"]);
 
 // 2. What is serialization?
-// Serializing - turing the object into a string that resembles the structure of an object, so it is easy to read and understand
+// Serializing - turning the object into a string that resembles the structure of an object, so it is easy to read and understand
 // JSON.stringify
 const personJSON = JSON.stringify(person);
 
