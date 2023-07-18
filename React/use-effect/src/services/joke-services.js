@@ -27,6 +27,7 @@ export const getJokesBySearchTerm = async (searchTerm = '') => {
     throw new Error('Failed to fetch jokes');
   }
   const data = await response.json();
+  
   if (data.results.length === 0) {
     throw new Error('No jokes found');
   }
