@@ -17,7 +17,7 @@ public class DynamicArray {
 	}
 
 	private void resize() {
-		this.buffer *= 2; // double the length when resize
+		this.buffer *= 2; // double the max length when resize
 		this.data = Arrays.copyOf(this.data, this.buffer); 
 	}
 
