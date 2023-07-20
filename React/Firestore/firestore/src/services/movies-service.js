@@ -1,4 +1,4 @@
-import { db } from '../../config/firebase';
+import { db } from "../../config/firebase";
 import {
   collection,
   getDocs,
@@ -9,10 +9,10 @@ import {
   deleteDoc,
   updateDoc,
   increment,
-} from 'firebase/firestore';
+} from "firebase/firestore";
 
 export const getAllMovies = async () => {
-  const collectionRef = collection(db, 'movies');
+  const collectionRef = collection(db, "movies");
   const querySnapshot = await getDocs(collectionRef);
   // const data = querySnapshot.docs.map(doc => {
   //   const id = doc.id
@@ -24,7 +24,7 @@ export const getAllMovies = async () => {
 
 export const createMovie = async (data) => {
   try {
-    const collectionRef = collection(db, 'movies');
+    const collectionRef = collection(db, "movies");
     const newMovieRef = await addDoc(collectionRef, { ...data, watchCount: 1 });
     return newMovieRef;
   } catch (err) {
@@ -33,35 +33,41 @@ export const createMovie = async (data) => {
   }
 };
 
+// live subscribe to collection
 export const getMovieSubscription = (callback) => {
-  const collectionRef = collection(db, 'movies');
-  const unsubscribe = onSnapshot(collectionRef, (snapshot) => {
+  const collectionRef = collection(db, "movies");
+
+  // onSnapshot:
+  // creates a listener listening to update of firestore collection
+  // returns unsubscribe function that can be called to cancel the snapshot listener.
+  const unsubscribeFn = onSnapshot(collectionRef, (snapshot) => {
+    // every time a new document added -> take a snapshot of what database look like at that time
     const movieData = snapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     }));
     callback(movieData);
   });
-  return unsubscribe;
+  return unsubscribeFn;
 };
 
 export const getMovieById = async (id) => {
-  const docRef = doc(db, 'movies', id);
+  const docRef = doc(db, "movies", id);
   const snapshot = await getDoc(docRef);
   if (!snapshot.exists()) {
-    throw new Error('Document not found');
+    throw new Error("Document not found");
   }
 
   return { id: snapshot.id, ...snapshot.data() };
 };
 
 export const deleteMovieById = async (id) => {
-  const docRef = doc(db, 'movies', id);
+  const docRef = doc(db, "movies", id);
   await deleteDoc(docRef);
 };
 
 export const incrementWatchedById = async (id) => {
-  const docRef = doc(db, 'movies', id);
+  const docRef = doc(db, "movies", id);
   const updatedDoc = await updateDoc(docRef, {
     watchCount: increment(1),
   });
