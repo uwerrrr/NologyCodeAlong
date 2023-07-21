@@ -203,15 +203,24 @@ public class Main {
 			 * the reduction is parallelized or when there's a mismatch between the types of
 			 * the accumulator arguments and the data type of the accumulator implementation
 			 */	    
+	    
+//	    ArrayList<String> greetings = new ArrayList<>(Arrays.asList("hi", "hello", "good morning"));
 	    int totalLengthOfGreetings1 = greetings.stream().reduce(
-	    		0, 
-	    		(acc, curr) -> acc + curr.length(), 
-	    		(a,b) -> a + b);
+	    		1, 
+	    		(acc, curr) -> {
+	    			System.out.println("curr.length: " + curr.length());
+	    			return acc * curr.length();}, 
+	    		(a,b) -> {	
+	    			System.out.println("b: " + b);
+	    			return a + b;});
+	    
+	    System.out.println("totalLengthOfGreetings1: " + totalLengthOfGreetings1);
 	    
 	    int totalLengthOfGreetings2 = greetings.stream().reduce(
 	    		0, 
 	    		(acc, curr) -> acc + curr.length(), 
 	    		Integer::sum); // we 
+	    System.out.println("totalLengthOfGreetings2: " + totalLengthOfGreetings2);
 	    
 	    int totalLengthOfGreetings3 = greetings.stream().reduce(
 	    		0, 
