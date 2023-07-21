@@ -137,6 +137,7 @@ public class Main {
 		}
 	
 		
+		
 		///// Consultant use case
 		Consultant kate = new Consultant("Kate", "Melbourne");
 		Consultant john = new Consultant("John", "Sydney");
@@ -233,10 +234,87 @@ public class Main {
 	    int totalLengthOfGreetings4 = greetings.stream()
 	    		.map((g) -> g.length())
 	    		.reduce(0, (acc, curr) -> acc + curr);
+	    System.out.println("totalLengthOfGreetings4: " + totalLengthOfGreetings4);
 	    
 	    
+	    //*** More Optional data 
+	    Optional<Integer> maybeSum = numbers2.stream().reduce((prev, curr) -> prev + curr);
+		
+		ArrayList<Integer> nums3 = new ArrayList<>();
+		
+		Optional<Integer> maybeSum2 = nums3.stream().reduce(Integer::sum);
+		
+		System.out.println(maybeSum.get());
+		System.out.println(maybeSum.isPresent());
+		System.out.println(maybeSum2.isPresent());
+		
+		// reduce with 1 argument -> returns an empty Optional for an empty stream
+		// returns an Optional with the reduction result as the value of that Optional
+		
+		// reduce with two arguments -> returns the initial(first argument) if the stream is empty
+		System.out.println(nums3.stream().reduce(120, Integer::sum));
 	    
 	    
-	    
+		
+		
+		
+		//******* Book challenge
+		
+		// reduce with three - code won't compile unless you add a third arg in situations
+		// where you are storing one data type in a data structure and you want a different data type 
+		// as the reducing result
+		
+		// in some situations you can first map your stream to a stream of the data type you need
+		// then use reduce with two arg
+		
+		Book book1 = new Book("Educated", 250, "Tara Westover", 2018);
+		Book book2 = new Book("Anxious People", 492, "Fredrik Backman", 2020);
+		Book book3 = new Book("The Dutch House", 352, "Ann Patchett", 2019);
+		Book book4 = new Book("Crime and Punishement", 366, "Fyodor Dostoyevsky", 1866);
+		Book book5 = new Book("1984", 384, "George Orwell", 1949);
+		
+		ArrayList<Book> allBooks = new ArrayList<>(Arrays.asList(book1, book2, book3, 
+				book4, book5));
+		
+		//a list of titles converted to uppercase
+		
+		ArrayList<String> upperCaseTitles = allBooks.stream()
+				.map((book) -> book.getTitle().toUpperCase())
+				.collect(Collectors.toCollection(ArrayList::new));
+		
+		System.out.println(upperCaseTitles);
+		
+		//a list of books that were published after year 2000
+		
+		ArrayList<Book> after2000 = allBooks.stream().filter((book) -> book.getYearPublished() > 2000)
+				.collect(Collectors.toCollection(ArrayList::new));
+		
+		after2000.stream().forEach((book) -> book.printBookDetails());
+		
+		//int that will store the value of all pages of the books combined
+		
+		int allPages = allBooks.stream().reduce(0, (prev, curr) -> prev + curr.getPages(), 
+				Integer::sum);
+		
+		int allPages2 = allBooks.stream().map((book) -> book.getPages())
+				.reduce(0, (prev, curr) -> prev + curr);
+		
+		System.out.println(allPages + ", " + allPages2);
+		
+		//find the book with the highest amount of pages 
+		// (try and use reduce or look for other methods)
+		
+		// max
+		Book maxPages = allBooks.stream()
+				.max((b1, b2) -> Integer.compare(b1.getPages(), b2.getPages())).orElse(book1);
+		
+		maxPages.printBookDetails();
+		
+		
+		Book maxPagesReduce = allBooks.stream().reduce(allBooks.get(0), (prev, curr) -> {
+			return prev.getPages() < curr.getPages() ? curr : prev;
+		});
+		
+		maxPagesReduce.printBookDetails();
 	}
 }
