@@ -48,3 +48,38 @@ SELECT * FROM cities WHERE
 -- BETWEEN __ AND __
 SELECT * FROM cities WHERE population BETWEEN 5000 AND 10000;
 
+-- ** Alter selection
+-- LIMITING
+SELECT * FROM cities LIMIT 10;
+SELECT * FROM cities LIMIT 10 OFFSET 1;
+SELECT * FROM cities LIMIT 1, 10; -- equal to LIMIT 10 OFFSET 1; -- select from item index from 1 to 10
+
+-- ORDERING
+SELECT * FROM cities ORDER BY population; -- by default, sort ASC
+SELECT * FROM cities ORDER BY population DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
