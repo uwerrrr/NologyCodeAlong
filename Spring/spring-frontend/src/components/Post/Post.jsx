@@ -1,13 +1,26 @@
-import React from "react";
+import styles from "./Post.module.scss";
+import { deletePostById, getAllPosts } from "../../services/posts";
 
-const Post = ({ post }) => {
-  const { title, category, content } = post;
-  console.log("from post:");
+const Post = ({ post, requestNum, setRequestNum }) => {
+  const { id, title, category, content } = post;
+
+  const handleDelete = async () => {
+    try {
+      await deletePostById(id);
+      setRequestNum(requestNum + 1);
+      console.log("deleted");
+
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <div>
-      <h3>{title}</h3>
+    <div className={styles.Post}>
+      <h3>{title.toUpperCase()}</h3>
       <p>{category}</p>
       <p>{content}</p>
+      <button onClick={handleDelete}>Delete Post</button>
     </div>
   );
 };
