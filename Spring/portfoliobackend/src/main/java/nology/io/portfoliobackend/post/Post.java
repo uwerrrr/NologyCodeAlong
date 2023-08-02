@@ -81,7 +81,7 @@ public class Post {
 	}
 
 	
-	// constructors of Post
+//	 constructors of Post
 	public Post() {}
 	 
 	public Post(String title, String category, String content, Date createdAt) {

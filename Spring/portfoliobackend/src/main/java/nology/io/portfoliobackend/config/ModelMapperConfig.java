@@ -17,9 +17,9 @@ public class ModelMapperConfig {
 		
 		//*** set up rules for mapper here ***//
 		
-		// when mapping String -> trim it -> return trimmed String
+		// when mapping String to String -> trim it -> return trimmed String
 		mapper.typeMap(String.class, String.class).setConverter(new StringTrimConverter());
-		// .typeMap(Class<String> sourceType, Class<String> destinationType)
+			// .typeMap(Class<String> sourceType, Class<String> destinationType)
 		
 		// skip null values when mapping
 		mapper.getConfiguration().setSkipNullEnabled(true);

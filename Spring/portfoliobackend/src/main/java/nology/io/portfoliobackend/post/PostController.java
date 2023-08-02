@@ -34,7 +34,7 @@ public class PostController {
 	// POST
 //	@PostMapping
 //	public void createPost(@Valid @RequestBody CreatePostDTO data){
-//		// automatically map json keys with data variables
+//		// automatically map json keys with data properties
 //		// @RequestBody: parameter from body of the web request.
 //		// @Valid: error when sent data is not correct, based on defined in CreatePostDTO class
 //		System.out.println("data.category:" + data.category);
@@ -44,6 +44,9 @@ public class PostController {
 	
 	@PostMapping
 	public ResponseEntity <Post> createPost(@Valid @RequestBody CreatePostDTO data){
+		// automatically map json keys with data properties
+		// @RequestBody: parameter from body of the web request.
+		// @Valid: error when sent data is not correct, based on defined in CreatePostDTO class
 		Post createdPost = this.postService.create(data);
 		return new ResponseEntity<>(createdPost, HttpStatus.CREATED);
 		
