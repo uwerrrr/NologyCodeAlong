@@ -13,7 +13,7 @@ public class StudentRepositoryTest {
 	@Autowired
 	private StudentRepository underTest;
 	
-	@AfterEach
+	@AfterEach // after each test -> delete all created data
 	void tearDown() {
 		underTest.deleteAll();
 	}
@@ -27,10 +27,10 @@ public class StudentRepositoryTest {
 			Student.Gender.MALE
 		);
 				
-		underTest.save(student);
+		underTest.save(student); // save student to test database
 		
-		boolean received = underTest.selectExistsEmail(email);
-		assertThat(received).isTrue();
+		boolean received = underTest.selectExistsEmail(email); // check email we saved -> existed ? 
+		assertThat(received).isTrue(); // should be true for existed
 
 	}
 	

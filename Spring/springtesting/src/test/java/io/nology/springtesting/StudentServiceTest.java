@@ -41,12 +41,14 @@ public class StudentServiceTest {
 		);
 		
 		BDDMockito.given(studentRepository.selectExistsEmail(ArgumentMatchers.anyString()))
-			.willReturn(true);
+			.willReturn(true); 
+			// hard set selectExistsEmail() -> returns true
 		
+		// Test whether throw exception
 		Assertions.assertThatThrownBy(() -> underTest.addStudent(student))
 			.isInstanceOf(BadRequestException.class)
 			.hasMessage("Email " + student.getEmail() + " taken");
-		
+			
 	}
 	
 	@Test
@@ -82,9 +84,11 @@ public class StudentServiceTest {
 		
 		underTest.deleteStudent(id);
 		
+		
 		ArgumentCaptor<Long> idArgument
 			= ArgumentCaptor.forClass(Long.class);
 		
+		// test whether deleteById is executed
 		Mockito.verify(studentRepository).deleteById(idArgument.capture());
 		
 		
