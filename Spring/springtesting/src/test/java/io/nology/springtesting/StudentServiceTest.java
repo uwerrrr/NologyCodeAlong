@@ -1,10 +1,11 @@
 package io.nology.springtesting;
 
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.ArgumentMatchers;
 import org.mockito.BDDMockito;
 import org.mockito.Mock; // Import the Mock annotation from Mockito
 import org.mockito.Mockito;
@@ -13,9 +14,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 public class StudentServiceTest {
-
 	@Mock
 	private StudentRepository studentRepository;
+	
 	private StudentService underTest;
 	
 	@BeforeEach
@@ -27,21 +28,20 @@ public class StudentServiceTest {
 	void getAllStudentsShouldCallFindAll() {
 		underTest.getAllStudents();
 		
-		Mockito.verify(studentRepository).findAll(); // see findAll() method has been called ?
+		Mockito.verify(studentRepository).findAll();
 	}
 	
 	@Test
-	void isShouldAddStudent() {
+	void isShouldNotAddStudent() {
 		String email = "calum@gmail.com";
 		Student student = new Student(
-				"Calum",
-				email,
-				Student.Gender.MALE);
+			"Calum",
+			email,
+			Student.Gender.MALE
+		);
 		
-		
-		// simulate we don't have existed email
 		BDDMockito.given(studentRepository.selectExistsEmail(ArgumentMatchers.anyString()))
-			.willReturn(false);
+			.willReturn(true);
 		
 		Assertions.assertThatThrownBy(() -> underTest.addStudent(student))
 			.isInstanceOf(BadRequestException.class)
@@ -51,55 +51,56 @@ public class StudentServiceTest {
 	
 	@Test
 	void itShouldAddStudent() {
-		String email = "calum@gmail.com";
 		Student student = new Student(
-				"Calum",
-				email,
-				Student.Gender.MALE);
+			"Calum",
+			"calum@gmail.com",
+			Student.Gender.MALE
+		);
+		
 		BDDMockito.given(studentRepository.selectExistsEmail(ArgumentMatchers.anyString()))
 			.willReturn(false);
 		
 		underTest.addStudent(student);
 		
-		ArgumentCaptor<Student> studentArgument = ArgumentCaptor.forClass(Student.class);
+		ArgumentCaptor<Student> studentArgument =
+				ArgumentCaptor.forClass(Student.class);
 		
-		Mockito.verify(studentRepository).save(studentArgument.capture()); 
+		Mockito.verify(studentRepository).save(studentArgument.capture());
 		
-		Assertions.assertThat(studentArgument.getValue())
-			.isEqualTo(student);
-		Assertions.assertThat(studentArgument.getValue()).getEmail()
+		Assertions.assertThat(studentArgument.getValue()).isEqualTo(student);
+		Assertions.assertThat(studentArgument.getValue().getEmail())
 			.isEqualTo(student.getEmail());
 		
-//		Assertions.assertThatThrownBy
 	}
 	
 	@Test
 	void isShouldDeleteStudentIfIdExists() {
 		Long id = 123l;
 		
-		// simulate we have existed id
 		BDDMockito.given(studentRepository.existsById(ArgumentMatchers.anyLong()))
-			.willReturn(true); 
+			.willReturn(true);
 		
 		underTest.deleteStudent(id);
 		
-		ArgumentCaptor<Long> idArgument = ArgumentCaptor.forClass(Long.class); // capture the argument of the method
+		ArgumentCaptor<Long> idArgument
+			= ArgumentCaptor.forClass(Long.class);
 		
 		Mockito.verify(studentRepository).deleteById(idArgument.capture());
 		
 		
 		Assertions.assertThat(idArgument.getValue()).isEqualTo(id);
-		
 	}
 	
-	
 	@Test
-	void isShouldNotDeleteStudentIfDoesntExist() {
+	void isShouldNotDeleteStudentIfIdDoesntExist() {
 		Long id = 123l;
 		
+		BDDMockito.given(studentRepository.existsById(id))
+			.willReturn(false);
 		
-		
-		
+		Assertions.assertThatThrownBy(() -> underTest.deleteStudent(id))
+			.isInstanceOf(StudentNotFoundException.class)
+			.hasMessage("Student with id " + id + " does not exists");
 		
 	}
 	
