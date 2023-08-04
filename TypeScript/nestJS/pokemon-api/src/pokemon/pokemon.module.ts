@@ -1,13 +1,12 @@
 // Handle entity injection
 
-import { Module } from "@nestjs/common";
-import { PokemonController } from "./pokemon.controller";
-import { AppService } from "src/app.service";
-import { MikroOrmModule } from "@mikro-orm/nestjs";
+import { Module } from '@nestjs/common';
+import { PokemonController } from './pokemon.controller';
+import { PokemonService } from './pokemon.service';
 
 @Module({
-  imports:[MikroOrmModule.forRoot(), PokemonModule ],
+  imports: [],
   controllers: [PokemonController],
-  providers:[AppService],
+  providers: [PokemonService],
 })
-export class PokemonModule
+export class PokemonModule {}

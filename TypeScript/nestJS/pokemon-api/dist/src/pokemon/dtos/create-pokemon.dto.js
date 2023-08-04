@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreatePokemonDTO = void 0;
+const class_transformer_1 = require("class-transformer");
 const class_validator_1 = require("class-validator");
 var PokemonType;
 (function (PokemonType) {
@@ -37,6 +38,28 @@ class CreatePokemonDTO {
 exports.CreatePokemonDTO = CreatePokemonDTO;
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.MinLength)(2),
     __metadata("design:type", String)
 ], CreatePokemonDTO.prototype, "name", void 0);
+__decorate([
+    (0, class_validator_1.IsEnum)(PokemonType, { message: 'Invalid type. Use one of: $value' }),
+    (0, class_transformer_1.Transform)(({ value }) => value.toLowerCase()),
+    __metadata("design:type", String)
+], CreatePokemonDTO.prototype, "type", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.Min)(5),
+    __metadata("design:type", Number)
+], CreatePokemonDTO.prototype, "hp", void 0);
+__decorate([
+    (0, class_validator_1.IsUrl)(),
+    __metadata("design:type", String)
+], CreatePokemonDTO.prototype, "imageLink", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.Min)(1),
+    __metadata("design:type", Number)
+], CreatePokemonDTO.prototype, "evolutionId", void 0);
 //# sourceMappingURL=create-pokemon.dto.js.map

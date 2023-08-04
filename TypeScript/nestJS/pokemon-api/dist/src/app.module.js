@@ -11,11 +11,12 @@ const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const mikro_orm_module_1 = require("@mikro-orm/nestjs/mikro-orm.module");
+const pokemon_module_1 = require("./pokemon/pokemon.module");
 let AppModule = exports.AppModule = class AppModule {
 };
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [mikro_orm_module_1.MikroOrmModule.forRoot()],
+        imports: [mikro_orm_module_1.MikroOrmModule.forRoot(), pokemon_module_1.PokemonModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

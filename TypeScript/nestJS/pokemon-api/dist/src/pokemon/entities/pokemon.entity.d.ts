@@ -5,5 +5,4 @@ export declare class Pokemon {
     hp: number;
     imageLink: string;
     evolutionId: number;
-    level: number;
 }

@@ -11,7 +11,7 @@ const common_1 = require("@nestjs/common");
 let PokemonService = exports.PokemonService = class PokemonService {
     create(data) {
         console.log('In service layer', data);
-        return `Pokemon service creates a pokemon`;
+        return `Pokemon service creates a pokemon: ${JSON.stringify({ ...data })}`;
     }
 };
 exports.PokemonService = PokemonService = __decorate([

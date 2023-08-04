@@ -4,5 +4,4 @@ export declare class CreatePokemonDTO {
     hp: number;
     imageLink: string;
     evolutionId: number;
-    level: number;
 }

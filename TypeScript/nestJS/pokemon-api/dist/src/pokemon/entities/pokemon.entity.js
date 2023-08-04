@@ -37,10 +37,6 @@ __decorate([
     (0, core_1.Property)({ nullable: true }),
     __metadata("design:type", Number)
 ], Pokemon.prototype, "evolutionId", void 0);
-__decorate([
-    (0, core_1.Property)(),
-    __metadata("design:type", Number)
-], Pokemon.prototype, "level", void 0);
 exports.Pokemon = Pokemon = __decorate([
     (0, core_1.Entity)()
 ], Pokemon);

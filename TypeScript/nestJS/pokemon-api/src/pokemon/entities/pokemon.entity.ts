@@ -15,6 +15,6 @@ export class Pokemon {
   imageLink: string;
   @Property({ nullable: true })
   evolutionId: number;
-  @Property()
-  level: number;
+  // @Property()
+  // level: number;
 }
