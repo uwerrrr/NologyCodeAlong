@@ -10,11 +10,13 @@ exports.PokemonModule = void 0;
 const common_1 = require("@nestjs/common");
 const pokemon_controller_1 = require("./pokemon.controller");
 const pokemon_service_1 = require("./pokemon.service");
+const nestjs_1 = require("@mikro-orm/nestjs");
+const pokemon_entity_1 = require("./entities/pokemon.entity");
 let PokemonModule = exports.PokemonModule = class PokemonModule {
 };
 exports.PokemonModule = PokemonModule = __decorate([
     (0, common_1.Module)({
-        imports: [],
+        imports: [nestjs_1.MikroOrmModule.forFeature([pokemon_entity_1.Pokemon])],
         controllers: [pokemon_controller_1.PokemonController],
         providers: [pokemon_service_1.PokemonService],
     })

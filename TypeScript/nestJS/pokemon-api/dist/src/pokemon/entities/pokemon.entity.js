@@ -11,7 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Pokemon = void 0;
 const core_1 = require("@mikro-orm/core");
+const pokemon_types_entity_1 = require("./pokemon-types.entity");
 let Pokemon = exports.Pokemon = class Pokemon {
+    constructor() {
+        this.types = new core_1.Collection(this);
+    }
 };
 __decorate([
     (0, core_1.PrimaryKey)(),
@@ -22,9 +26,9 @@ __decorate([
     __metadata("design:type", String)
 ], Pokemon.prototype, "name", void 0);
 __decorate([
-    (0, core_1.Property)(),
-    __metadata("design:type", String)
-], Pokemon.prototype, "type", void 0);
+    (0, core_1.ManyToMany)(() => pokemon_types_entity_1.PokemonTypes, (types) => types.pokemon),
+    __metadata("design:type", Object)
+], Pokemon.prototype, "types", void 0);
 __decorate([
     (0, core_1.Property)(),
     __metadata("design:type", Number)
@@ -37,6 +41,10 @@ __decorate([
     (0, core_1.Property)({ nullable: true }),
     __metadata("design:type", Number)
 ], Pokemon.prototype, "evolutionId", void 0);
+__decorate([
+    (0, core_1.Property)(),
+    __metadata("design:type", Number)
+], Pokemon.prototype, "level", void 0);
 exports.Pokemon = Pokemon = __decorate([
     (0, core_1.Entity)()
 ], Pokemon);

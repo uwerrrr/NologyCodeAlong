@@ -1,4 +1,12 @@
-import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import {
+  Collection,
+  Entity,
+  ManyToMany,
+  PrimaryKey,
+  Property,
+} from '@mikro-orm/core';
+import { Expose } from 'class-transformer';
+import { PokemonTypes } from './pokemon-types.entity';
 
 @Entity()
 export class Pokemon {
@@ -7,14 +15,17 @@ export class Pokemon {
 
   @Property({ unique: true })
   name: string;
-  @Property()
-  type: string;
+
+  @ManyToMany(() => PokemonTypes, (types) => types.pokemon)
+  types = new Collection<PokemonTypes>(this);
+
   @Property()
   hp: number;
   @Property()
   imageLink: string;
   @Property({ nullable: true })
   evolutionId: number;
-  // @Property()
-  // level: number;
+  @Property()
+  // @Expose({name:'level', })
+  level: number;
 }

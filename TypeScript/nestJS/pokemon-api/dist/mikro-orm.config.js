@@ -16,6 +16,10 @@ const config = {
         pathTs: 'src/migrations',
         path: 'dist/migrations',
     },
+    seeder: {
+        pathTs: 'src/seeders',
+        path: 'dist/seeders',
+    },
 };
 exports.default = config;
 //# sourceMappingURL=mikro-orm.config.js.map
